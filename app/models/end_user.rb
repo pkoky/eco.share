@@ -5,4 +5,6 @@ class EndUser < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attachment :profile_pic
+
+  has_many :post_products, dependent: :destroy
 end
