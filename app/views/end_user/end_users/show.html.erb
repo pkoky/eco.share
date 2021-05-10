@@ -1,20 +1,26 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-md-8 col-lg-8">
-      <span><%= link_to "edit", edit_end_user_path, class: "btn btn-success rounded-pill px4 ml-3" %></span>
+      <% if @end_user.id == current_end_user.id %>
+        <span><%= link_to "edit", edit_end_user_path, class: "btn btn-success rounded-pill px4 ml-3" %></span>
+      <% end %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-8 col-lg-8">
+      <div class="mt-3">
+        <%= attachment_image_tag @end_user, :profile_pic, :fill, 60, 60, class:"rounded-circle" %>
+        <%= @end_user.nickname %>
+      </div>
       <table class="table table-bordered table-condensed mt-3">
-        <tr>
-          <td>nickname</td>
-          <td><%= @end_user.nickname %></td>
-        </tr>
         <tr>
           <td>email</td>
           <td><%= @end_user.email %></td>
+        </tr>
+        <tr>
+          <td>self_introduction</td>
+          <td><%= @end_user.self_introduction %></td>
         </tr>
       </table>
     </div>

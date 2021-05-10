@@ -13,7 +13,7 @@ class EndUser::EndUsersController < ApplicationController
   end
 
   def update
-    @end_user = current_end_user
+    @end_user = EndUser.find(params[:id])
     if @end_user.update(end_user_params)
       redirect_to end_user_path(@end_user.id)
     else
@@ -23,7 +23,7 @@ class EndUser::EndUsersController < ApplicationController
 
   private
   def end_user_params
-    params.require(:end_user).permit(:nickname, :email)
+    params.require(:end_user).permit(:nickname, :email, :self_introduction, :profile_pic)
   end
 
 

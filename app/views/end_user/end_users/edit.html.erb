@@ -1,13 +1,19 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-md-8 col-lg-8">
-      <%= form_with model:@end_user ,url:end_user_path, local:true do |f| %>
+      <%= form_with model:@end_user ,url:end_user_path, method: :patch, local:true do |f| %>
       <table class="table table-bordered table-condensed mt-3">
+        <tr>
+          <td><%= f.attachment_field :profile_pic, placeholder: "profile_pic" %></td>
+        </tr>
         <tr>
           <td><%= f.text_field :nickname %></td>
         </tr>
         <tr>
-          <td><%= f.email_field :email%></td>
+          <td><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_area :self_introduction, placeholder:"自分の紹介文を書いてみましょう" %></td>
         </tr>
         <%= f.submit 'go', class: "btn btn-success rounded-pill px4 ml-3" %>
       </table>
