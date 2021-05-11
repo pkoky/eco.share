@@ -10,29 +10,36 @@
   </head>
 
   <body>
-    <% if end_user_signed_in? %>
-      <li>
-        <%= link_to "logout", destroy_end_user_session_path, method: :delete %>
-      </li>
-      <li>
-        <%= link_to "end_users", end_users_path %>
-      </li>
-      <li>
-        <%= link_to "post_product", post_products_path %>
-      </li>
-      <li>
-        <%= link_to "post_product_new", new_post_product_path %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "signup", new_end_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "login", new_end_user_session_path %>
-      </li>
-
-    <% end %>
-
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+        <% if end_user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "end_users", end_users_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "post_product", post_products_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "post_product_new", new_post_product_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "logout", destroy_end_user_session_path, method: :delete, class:"nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "signup", new_end_user_registration_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "login", new_end_user_session_path, class:"nav-link" %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </nav>
 
 
 

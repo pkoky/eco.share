@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+      <% @postProducts.each do |postProduct| %>
+      <table class="table table-bordered table-condensed mt-3">
+        <tbody>
+          <tr>
+            <td>
+              <%= attachment_image_tag postProduct.end_user, :profile_pic, :fill, 50, 50, class:"rounded-circle" %>
+              <%= postProduct.end_user.nickname %>
+              <p>end_user_id:<%= postProduct.end_user.id%></p>
+            </td>
+            
+          </tr>
+          <tr>
+            <td>
+              <%= link_to post_product_path(postProduct.id) do %>
+              <%= postProduct.productName %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= postProduct.message %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -6,12 +6,15 @@ class EndUser::PostProductsController < ApplicationController
   def create
     @postProduct = PostProduct.new(post_product_params)
     @postProduct.end_user_id = current_end_user.id
-    @postProduct.save
-    redirect_to root_path
+    if @postProduct.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def index
-
+    @postProducts = PostProduct.all
   end
 
   def show
@@ -19,11 +22,13 @@ class EndUser::PostProductsController < ApplicationController
   end
 
   def edit
-
+    @postProduct = PostProduct.find(params[:id])
   end
 
   def update
-
+    @postProduct = PostProduct.find(params[:id])
+    @postProduct.update(post_product_params)
+    redirect_to post_product_path(@postProduct.id)
   end
 
 
