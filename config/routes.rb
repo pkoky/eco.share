@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'homes/about'
     resources :end_users, only: [:index, :show, :edit, :update]
+    resources :post_products
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+      <% if @postProduct.end_user.id == current_end_user.id %>
+        <span><%= link_to "edit", edit_post_product_path, class: "btn btn-success rounded-pill px4 ml-3" %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+      <div class="mt-3">
+        <% if @postProduct.post_images.present? %>
+          <% @postProduct.post_images.each do |image| %>
+            <%= attachment_image_tag image, :image, :fill, 500, 500, class: "default_image" %>
+          <% end %>
+        <% end %>
+
+
+
+
+        <%= @postProduct.productName %>
+      </div>
+      <table class="table table-bordered table-condensed mt-3">
+        <tr>
+          <td>message</td>
+          <td><%= @postProduct.message %></td>
+        </tr>
+        <tr>
+          <td>howToGet</td>
+          <td><%= @postProduct.howToGet %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
