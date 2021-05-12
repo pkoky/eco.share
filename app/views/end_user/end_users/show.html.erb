@@ -13,6 +13,7 @@
         <%= attachment_image_tag @end_user, :profile_pic, :fill, 60, 60, class:"rounded-circle" %>
         <%= @end_user.nickname %>
       </div>
+      
       <table class="table table-bordered table-condensed mt-3">
         <tr>
           <td>self_introduction</td>
@@ -21,30 +22,26 @@
         <tr>
           <td>
             <p>id:<%= @end_user.id %></p>
-            <p>フォロー数: <%= @end_user.follower.count %></p>
-            <p>フォロワー数: <%= @end_user.followed.count %></p>
+            <div class="relationship_count">
+              <%= render "end_user/relationships/relationship_count", end_user: @end_user %>
+            </div>
           </td>
         </tr>
-        <tr>
-          <td>
-            <% unless @end_user == current_end_user %>
-              <% if current_end_user.following?(@end_user) %>
-                <%= link_to "フォロー外す", unfollow_path(@end_user), method: :post %>
-              <% else %>
-                <%= link_to "フォローする", follow_path(@end_user), method: :post %>
-              <% end %>
-            <% end %>
+        <tr id="follow_<%= @end_user.id %>">
+          <td class="relationship">
+            <%= render "end_user/relationships/relationship", end_user: @end_user %>
           </td>
         </tr>
       </table>
+      
       <table class="table table-bordered table-condensed mt-3">
         <thead>
           <tr>
             <th>フォロー一覧</th>
           </tr>
         </thead>
-        <% @end_user.following_end_user.where.not(id: current_end_user.id).each do |end_user| %>
-        <tr>
+        <% @end_user.following_end_user.each do |end_user| %>
+        <tr id="follow_<%= end_user.id %>">
           <td>
             <p>id: <%= end_user.id %></p>
             <p>
@@ -52,24 +49,22 @@
                 <%= end_user.nickname %>
               <% end %>
             </p>
-            <% if current_end_user.following?(end_user) %>
-              <%= link_to "フォロー外す", unfollow_path(end_user.id), method: :post %>
-            <% else %>
-              <%= link_to 'フォローする', follow_path(end_user.id), method: :post %>
-            <% end %>
+            <div class="relationship">
+              <%= render "end_user/relationships/relationship", end_user: end_user %>
+            </div>
           </td>
         </tr>
         <% end %>
       </table>
-      
+
       <table class="table table-bordered table-condensed mt-3">
         <thead>
           <tr>
             <th>フォロワー一覧</th>
           </tr>
         </thead>
-        <% @end_user.follower_end_user.where.not(id: current_end_user.id).each do |end_user| %>
-        <tr>
+        <% @end_user.follower_end_user.each do |end_user| %>
+        <tr id="follow_<%= end_user.id %>">
           <td>
             <p>id: <%= end_user.id %></p>
             <p>
@@ -77,11 +72,9 @@
                 <%= end_user.nickname %>
               <% end %>
             </p>
-            <% if current_end_user.following?(end_user) %>
-              <%= link_to "フォロー外す", unfollow_path(end_user.id), method: :post %>
-            <% else %>
-              <%= link_to 'フォローする', follow_path(end_user.id), method: :post %>
-            <% end %>
+            <div class="relationship">
+              <%= render "end_user/relationships/relationship", end_user: end_user %>
+            </div>
           </td>
         </tr>
         <% end %>

@@ -4,18 +4,14 @@
       <% @end_users.each do |end_user| %>
       <table class="table table-bordered table-condensed mt-3">
         <tbody>
-          <tr>
+          <tr id="follow_<%= end_user.id %>">
             <td>
               <p>id:<%= end_user.id %></p>
               <%= link_to end_user_path(end_user.id) do %>
                 <%= end_user.nickname %>
               <% end %>
-              <p>
-                <% if current_end_user.following?(end_user) %>
-                  <%= link_to 'フォロー外す', unfollow_path(end_user.id), method: :post %>
-                <% else %>
-                  <%= link_to 'フォローする', follow_path(end_user.id), method: :post %>
-                <% end %>
+              <p class="relationship">
+                <%= render "end_user/relationships/relationship", end_user: end_user %>
               </p>
             </td>
           </tr>

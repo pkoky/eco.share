@@ -1,12 +1,12 @@
 class EndUser::RelationshipsController < ApplicationController
   def follow
+    @end_user = EndUser.find(params[:id])
     current_end_user.follow(params[:id])
-    redirect_to end_users_path
   end
 
   def unfollow
+    @end_user = EndUser.find(params[:id])
     current_end_user.unfollow(params[:id])
-    redirect_to end_users_path
   end
 
 
