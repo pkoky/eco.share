@@ -7,16 +7,26 @@
     </div>
   </div>
 
+
+
+
+
+
+
+
+
   <div class="row">
     <div class="col-md-8 col-lg-8">
-      <div class="mt-3">
-        <% if @postProduct.post_images.present? %>
-          <% @postProduct.post_images.each do |image| %>
-            <%= attachment_image_tag image, :image, :fill, 500, 500, class: "default_image" %>
-          <% end %>
-        <% end %>
-
-      </div>
+       <div class="slider mt-3">
+          <% @postProduct.post_images.each do |post| %>
+            <%= attachment_image_tag post, :image, :fill, 1200, 800, format: "jpeg" %>
+           <% end %>
+        </div>
+        <div class="slider-1">
+          <% @postProduct.post_images.each do |post| %>
+            <%= attachment_image_tag post, :image, :fill, 1200, 800, format: "jpeg" %>
+           <% end %>
+        </div>
       <table class="table table-bordered table-condensed mt-3">
         <tr>
           <td>

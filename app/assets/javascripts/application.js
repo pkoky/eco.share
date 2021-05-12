@@ -18,3 +18,19 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('.slider').slick({
+    // infinite: true, //スライドのループ有効化
+    arrows: false, //矢印非表示
+    fade: true, //フェードの有効化
+    draggable: false //ドラッグ操作の無効化
+  });
+  $('.slider-1').slick({
+    // infinite: true, //スライドのループ有効化
+    slidesToShow: 5, //表示するスライドの数
+    focusOnSelect: true, //フォーカスの有効化
+    asNavFor: '.slider', //thumbnailクラスのナビゲーション
+  });
+});
+// https://www.jungleocean.com/programming/190201jquery-slick

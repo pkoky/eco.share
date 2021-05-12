@@ -6,8 +6,9 @@
         <tbody>
           <tr>
             <td>
+              <p>id:<%= end_user.id %></p>
               <%= link_to end_user_path(end_user.id) do %>
-              <%= end_user.nickname %>
+                <%= end_user.nickname %>
               <% end %>
               <p>
                 <% if current_end_user.following?(end_user) %>

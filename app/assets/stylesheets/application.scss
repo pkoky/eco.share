@@ -16,3 +16,13 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+.slider { max-width: 700px; margin: 0 auto 5px; padding: 0;}
+.slider img,.slider-1 img{ width: 100%;}
+// .slider-1 { max-width: 700px; margin: 0 auto;}
+// .slider-1 li { margin: 5px;}
+// .slider-1 .slick-next { right: 20px; z-index: 100;}
+// .slider-1 .slick-prev { left: 15px; z-index: 100;}
+.slider-1 .slick-current { opacity: 0.5;}
+.slider-1 { cursor: pointer;}

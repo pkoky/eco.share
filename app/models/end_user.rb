@@ -16,8 +16,8 @@ class EndUser < ApplicationRecord
   # アソシエーションによって参照するカラムをforeign_keyとして指定している
   # Relationshipモデルに対して、follower_id,followed_idを見てfollower,followedという名前でアソシエーションをしている
 
-  has_many :following_user, through: :follower, source: :followed
-  has_many :follower_user, through: :followed, source: :follower
+  has_many :following_end_user, through: :follower, source: :followed
+  has_many :follower_end_user, through: :followed, source: :follower
   # through: :経由するモデル名を指定する
   # source: :関連先モデル名を指定する
 
@@ -34,7 +34,7 @@ class EndUser < ApplicationRecord
   end
   # フォローしていればtrueを返す
   def following?(end_user)
-    following_user.include?(end_user)
+    following_end_user.include?(end_user)
   end
 
 end

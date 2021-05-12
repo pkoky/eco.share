@@ -1,7 +1,7 @@
 class EndUser::EndUsersController < ApplicationController
 
   def index
-    @end_users = EndUser.all
+    @end_users = EndUser.all.where.not(id: current_end_user.id)
   end
 
   def show
