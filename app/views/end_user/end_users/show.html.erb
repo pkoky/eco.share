@@ -13,7 +13,9 @@
         <%= attachment_image_tag @end_user, :profile_pic, :fill, 60, 60, class:"rounded-circle" %>
         <%= @end_user.nickname %>
       </div>
-      
+      <div>
+        <%= link_to "bookmarks", bookmarks_path %>
+      </div>
       <table class="table table-bordered table-condensed mt-3">
         <tr>
           <td>self_introduction</td>
@@ -33,7 +35,7 @@
           </td>
         </tr>
       </table>
-      
+
       <table class="table table-bordered table-condensed mt-3">
         <thead>
           <tr>
@@ -41,7 +43,7 @@
           </tr>
         </thead>
         <% @end_user.following_end_user.each do |end_user| %>
-        <tr id="follow_<%= end_user.id %>">
+        <tr>
           <td>
             <p>id: <%= end_user.id %></p>
             <p>
@@ -49,9 +51,6 @@
                 <%= end_user.nickname %>
               <% end %>
             </p>
-            <div class="relationship">
-              <%= render "end_user/relationships/relationship", end_user: end_user %>
-            </div>
           </td>
         </tr>
         <% end %>
@@ -64,7 +63,7 @@
           </tr>
         </thead>
         <% @end_user.follower_end_user.each do |end_user| %>
-        <tr id="follow_<%= end_user.id %>">
+        <tr>
           <td>
             <p>id: <%= end_user.id %></p>
             <p>
@@ -72,9 +71,6 @@
                 <%= end_user.nickname %>
               <% end %>
             </p>
-            <div class="relationship">
-              <%= render "end_user/relationships/relationship", end_user: end_user %>
-            </div>
           </td>
         </tr>
         <% end %>

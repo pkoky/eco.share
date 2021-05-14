@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_11_102810) do
+ActiveRecord::Schema.define(version: 2021_05_12_105356) do
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "end_user_id"
+    t.integer "post_product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["end_user_id"], name: "index_bookmarks_on_end_user_id"
+    t.index ["post_product_id"], name: "index_bookmarks_on_post_product_id"
+  end
 
   create_table "end_users", force: :cascade do |t|
     t.string "email", default: "", null: false

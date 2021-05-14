@@ -6,6 +6,7 @@ class EndUser < ApplicationRecord
 
   attachment :profile_pic
   has_many :post_products, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   # フォローする人=follower
   # end_userとフォローする人を結びつける

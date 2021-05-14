@@ -10,12 +10,12 @@
     <div class="col-md-8 col-lg-8">
        <div class="slider mt-3">
           <% @postProduct.post_images.each do |post| %>
-            <%= attachment_image_tag post, :image, :fill, 1200, 800, format: "jpeg" %>
+            <%= attachment_image_tag post, :image, :fill, 800, 800, format: "jpeg" %>
            <% end %>
         </div>
         <div class="slider-1">
           <% @postProduct.post_images.each do |post| %>
-            <%= attachment_image_tag post, :image, :fill, 1200, 800, format: "jpeg" %>
+            <%= attachment_image_tag post, :image, :fill, 800, 800, format: "jpeg" %>
            <% end %>
         </div>
       <table class="table table-bordered table-condensed mt-3">
@@ -24,6 +24,12 @@
             <%= @postProduct.productName %>
           </td>
         </tr>
+        <tr id="bookmark_<%= @postProduct.id %>">
+            <td class="bookmark">
+              <%= render "end_user/bookmarks/bookmarks", postProduct: @postProduct %>
+            </td>
+          </tr>
+          <tr>
         <tr>
           <td>message</td>
           <td><%= @postProduct.message %></td>

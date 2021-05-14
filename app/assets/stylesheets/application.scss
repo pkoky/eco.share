@@ -18,11 +18,38 @@
 @import 'font-awesome';
 
 
-.slider { max-width: 500px; margin: 0 auto 5px; padding: 0;}
-.slider img,.slider-1 img{ width: 100%;}
+.slider {
+  max-width: 800px;
+  margin: 0 auto 5px;
+  padding: 0;
+}
+.slider img,.slider-1 img{
+  width: 100%;
+}
 // .slider-1 { max-width: 700px; margin: 0 auto;}
 // .slider-1 li { margin: 5px;}
 // .slider-1 .slick-next { right: 20px; z-index: 100;}
 // .slider-1 .slick-prev { left: 15px; z-index: 100;}
-.slider-1 .slick-current { opacity: 0.5;}
-.slider-1 { cursor: pointer;}
+.slider-1 .slick-current {
+  opacity: 0.5;
+}
+.slider-1 {
+  cursor: pointer;
+}
+
+.img_wrap{
+  border: 1px solid #ddd;
+  width: 300px;
+  // height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+.img_wrap img{
+  width: 100%;
+  transition-duration: 0.5s;
+}
+.img_wrap:hover img{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}

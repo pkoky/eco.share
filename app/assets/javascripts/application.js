@@ -24,7 +24,10 @@ $(document).on('turbolinks:load', function() {
     // infinite: true, //スライドのループ有効化
     arrows: false, //矢印非表示
     fade: true, //フェードの有効化
-    draggable: false //ドラッグ操作の無効化
+    draggable: false, //ドラッグ操作の無効化
+    centerMode: true,
+    centerPadding: '0px',
+    focusOnSelect:true,
   });
   $('.slider-1').slick({
     // infinite: true, //スライドのループ有効化

@@ -1,0 +1,27 @@
+<div class="container my-5">
+  <div class="row">
+    <h2>bookmarks</h2>
+    <div class="col-md-8 col-lg-8">
+      <% @bookmarks.each do |bookmark| %>
+      <table class="table table-bordered table-condensed mt-3">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to post_product_path(bookmark.post_product.id) do %>
+                <% bookmark.post_product.post_images.first(1).each do |image| %>
+                  <%= attachment_image_tag image, :image, :fill, 200, 200,class: "default_image" %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%=  bookmark.post_product.productName %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

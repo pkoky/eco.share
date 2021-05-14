@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   scope module: :end_user do
     root to: 'homes#top'
     get 'homes/about'
+    get 'mybookmarks' => 'bookmarks#bookmarks', as: 'bookmarks'
     resources :end_users, only: [:index, :show, :edit, :update]
-    resources :post_products
+    resources :post_products do
+      resource :bookmarks, only: [:create, :destroy]
+    end
     post 'follow/:id' => 'relationships#follow', as: 'follow'
     post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   end

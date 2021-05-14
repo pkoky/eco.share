@@ -1,6 +1,6 @@
 <div class="container my-5">
   <div class="row">
-    <div class="col-md-8 col-lg-8">
+    <div class="col-md-4 col-lg-2">
       <% @postProducts.each do |postProduct| %>
       <table class="table table-bordered table-condensed mt-3">
         <tbody>
@@ -12,17 +12,22 @@
             </td>
           </tr>
           <tr>
-            <td>
-              <% postProduct.post_images.first(1).each do |image| %>
-                <%= attachment_image_tag image, :image, :fill, 200, 200,class: "default_image" %>
+            <td class="img_wrap">
+              <%= link_to post_product_path(postProduct.id) do %>
+                <% postProduct.post_images.first(1).each do |image| %>
+                  <%= attachment_image_tag image, :image, :fill, 400, 400,class: "default_image" %>
+                <% end %>
               <% end %>
+            </td>
+          </tr>
+          <tr id="bookmark_<%= postProduct.id %>">
+            <td class="bookmark">
+              <%= render "end_user/bookmarks/bookmarks", postProduct: postProduct %>
             </td>
           </tr>
           <tr>
             <td>
-              <%= link_to post_product_path(postProduct.id) do %>
               <%= postProduct.productName %>
-              <% end %>
             </td>
           </tr>
           <tr>
