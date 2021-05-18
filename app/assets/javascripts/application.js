@@ -19,6 +19,14 @@
 //= require turbolinks
 //= require_tree .
 
+
+$(document).on('turbolinks:load', function() {
+  window.addEventListener("load", function () {
+    $('[data-toggle="popover"]').popover();
+  });
+});
+
+
 $(document).on('turbolinks:load', function() {
   $('.slider').slick({
     // infinite: true, //スライドのループ有効化
@@ -37,3 +45,5 @@ $(document).on('turbolinks:load', function() {
   });
 });
 // https://www.jungleocean.com/programming/190201jquery-slick
+
+

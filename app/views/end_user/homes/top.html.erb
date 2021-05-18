@@ -1,1 +1,69 @@
-<h1>top</h1>
+<div class="container-fluid">
+  <div class="row home_image">
+    <div class="home_image_content">
+      <p class="home_image_text">
+        texttext<br/>
+        texttexttexttexttexttext、<br/>
+        texttexttexttexttexttexttexttexttext。<br/>
+      </p>
+      <p class="home_image_text_name">
+        text・texttexttext
+      </p>
+    </div>
+  </div>
+  <div class="row mx-auto my-5 home_postProducts">
+    <% @postProducts.each do |postProduct| %>
+      <div class="col">
+        <div class="card flex_item shadow" style="width: 15rem;">
+          <%= link_to post_product_path(postProduct.id) do %>
+            <% postProduct.post_images.first(1).each do |image| %>
+              <%= attachment_image_tag image, :image, class:"card-img-top productImage";%>
+            <% end %>
+          <% end %>
+          <div id="bookmark_<%= postProduct.id %>">
+            <div class="bookmark">
+              <%= render "end_user/bookmarks/bookmarks", postProduct: postProduct %>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= postProduct.productName %>
+            </h5>
+            <!--simple_format 改行が反映される-->
+            <div class="line-clamp">
+              <p class="card-text"><%= simple_format postProduct.message %></p>
+            </div>
+            <div>
+              <%= postProduct.updated_at %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "read all", post_products_path, class: "btn btn--blue_dark mx-auto my-5 pt-3"%>
+  </div>
+  <div class="row mx-auto home_text my-5">
+    <div class="col-md-5 col-lg-5">
+      <div class="title--bold title">
+        ecoに関するものを。<br/>
+        お気に入りを記録し<br/>
+        他の方のお気に入りを参考にしてください。
+      </div>
+    </div>
+    <div class="col-md-7 col-lg-7">
+      <p>
+      現在の経済システムの性質では、<br/>
+      より広告にお金をかけたもの・良いイメージを作り上げたものがより多くの人の目に触れます。<br/>
+      自分のお気に入りの製品を記録し、それを他の人が見ることで間接的に本当にいいものをお勧めすることになります。<br>
+      それは本当にいい製品を作り環境に配慮している企業が評価されることにつながります。<br/>
+      ゆくゆくは社会を変えることにもなると信じています。<br/>
+      あなたのお気に入りのものを記録する場所として、<br/>
+      他の方のお気に入りを参考に新たな素晴らしいものとの出会いの場所として使っていただけると嬉しいです。
+      </p>
+    </div>
+  </div>
+  <div class="row py-5" style="background:#00aca9;">
+
+
+  </div>
+</div>

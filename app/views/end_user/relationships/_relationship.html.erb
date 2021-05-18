@@ -1,7 +1,7 @@
 <% unless end_user == current_end_user %>
   <% if current_end_user.following?(end_user) %>
-    <%= link_to "フォロー外す", unfollow_path(end_user), method: :post, remote: true %>
+    <%= link_to "フォロー中", unfollow_path(end_user), method: :post, remote: true, class: "btn btn--transparence pt-3" %>
   <% else %>
-    <%= link_to "フォローする", follow_path(end_user), method: :post, remote: true %>
+    <%= link_to "フォローする", follow_path(end_user), method: :post, remote: true, class:"btn btn--blue_dark pt-3" %>
   <% end %>
 <% end %>

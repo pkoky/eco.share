@@ -1,0 +1,4 @@
+$("textarea").val("");
+$("input").val("");
+$('#exampleModalLong').modal('hide');
+$('.postProduct').html("<%= escape_javascript(render "end_user/end_users/indexPostProduct", end_user: @end_user ) %>")

@@ -1,28 +1,29 @@
-<div class="container my-5">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-lg-8">
+    <div class="col-md-8 col-lg-6">
       <% @end_users.each do |end_user| %>
-      <table class="table table-bordered table-condensed mt-3">
-        <tbody>
+      <table class="table table-borderless table-hover">
+        <tbody class="text-center">
           <tr id="follow_<%= end_user.id %>">
+            <td><%= attachment_image_tag end_user, :profile_pic, :fill, 80, 80, class:"rounded-circle" %></td>
             <td>
-              <p>id:<%= end_user.id %></p>
               <%= link_to end_user_path(end_user.id) do %>
                 <%= end_user.nickname %>
               <% end %>
+            </td>
+            <td>
               <p class="relationship">
                 <%= render "end_user/relationships/relationship", end_user: end_user %>
               </p>
             </td>
           </tr>
-          <tr>
-            <td>
-              <%= end_user.self_introduction %>
-            </td>
-          </tr>
         </tbody>
       </table>
       <% end %>
+    </div>
+
+    <div class="col-lg-6 end_user_index_image">
+      <div class="end_user_index_image_content"></div>
     </div>
   </div>
 </div>

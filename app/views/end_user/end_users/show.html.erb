@@ -1,81 +1,126 @@
-<div class="container my-5">
+<div class="container-fluid my-5">
   <div class="row">
-    <div class="col-md-8 col-lg-8">
-      <% if @end_user.id == current_end_user.id %>
-        <span><%= link_to "edit", edit_end_user_path, class: "btn btn-success rounded-pill px4 ml-3" %></span>
-      <% end %>
+    <div class="col mx-5">
+      <div class="row">
+        <div class="col-lg-2 text-center">
+          <div class="mt-3">
+            <%= attachment_image_tag @end_user, :profile_pic, :fill, 60, 60, class:"rounded-circle" %>
+            <p class="mt-3"><%= @end_user.nickname %></p>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 text-center pt-5">
+          <div>
+            <%= link_to bookmarks_path do %>
+              <i class="fas fa-book-open" style="color:#00aca9;"></i>
+              <p>ブックマーク</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="relationship_count">
+            <%= render "end_user/relationships/relationship_count", end_user: @end_user %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p><%= simple_format @end_user.self_introduction %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto mt-5">
+          <% if @end_user.id == current_end_user.id %>
+            <%= link_to "プロフィールを編集", edit_end_user_path, class: "btn btn--blue_dark pt-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 end_user_image">
+      <div class="end_user_image_content"></div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-8 col-lg-8">
-      <div class="mt-3">
-        <%= attachment_image_tag @end_user, :profile_pic, :fill, 60, 60, class:"rounded-circle" %>
-        <%= @end_user.nickname %>
-      </div>
-      <div>
-        <%= link_to "bookmarks", bookmarks_path %>
-      </div>
-      <table class="table table-bordered table-condensed mt-3">
-        <tr>
-          <td>self_introduction</td>
-          <td><%= @end_user.self_introduction %></td>
-        </tr>
-        <tr>
-          <td>
-            <p>id:<%= @end_user.id %></p>
-            <div class="relationship_count">
-              <%= render "end_user/relationships/relationship_count", end_user: @end_user %>
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 mx-auto mt-5 pt-5">
+      <% if @end_user == current_end_user %>
+      <!--modal-->
+      <button type="button" class="btn btn--transparence" data-toggle="modal" data-target="#exampleModalLong">
+        新規投稿
+      </button>
+      <% end %>
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">新規投稿</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          </td>
-        </tr>
-        <tr id="follow_<%= @end_user.id %>">
-          <td class="relationship">
-            <%= render "end_user/relationships/relationship", end_user: @end_user %>
-          </td>
-        </tr>
-      </table>
 
-      <table class="table table-bordered table-condensed mt-3">
-        <thead>
-          <tr>
-            <th>フォロー一覧</th>
-          </tr>
-        </thead>
-        <% @end_user.following_end_user.each do |end_user| %>
-        <tr>
-          <td>
-            <p>id: <%= end_user.id %></p>
-            <p>
-              <%= link_to end_user_path(end_user) do %>
-                <%= end_user.nickname %>
-              <% end %>
-            </p>
-          </td>
-        </tr>
-        <% end %>
-      </table>
+            <%= form_with model:@postProductNew, url:post_products_path do |f| %>
+              <div class="modal-body">
+                <!--https://www.tohoho-web.com/bootstrap/popovers.html ポップオーバーについて-->
 
-      <table class="table table-bordered table-condensed mt-3">
-        <thead>
-          <tr>
-            <th>フォロワー一覧</th>
-          </tr>
-        </thead>
-        <% @end_user.follower_end_user.each do |end_user| %>
-        <tr>
-          <td>
-            <p>id: <%= end_user.id %></p>
-            <p>
-              <%= link_to end_user_path(end_user) do %>
-                <%= end_user.nickname %>
-              <% end %>
-            </p>
-          </td>
-        </tr>
-        <% end %>
-      </table>
+                <div class="form-group">
+                  <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="写真"data-content="写真をいくつか投稿する場合は、shiftを使い、1度で選択してください。">
+                  <i class="far fa-question-circle"></i>
+                </button>
+                  <%= f.label :post_images_images, "写真", class:"form-control" %>
+                  <%= f.attachment_field :post_images_images, multiple: true, class:"form-control" %>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="商品名"data-content="掲載されるお品物の名前を記入してください。もしわからない場合はご自身がわかりやすい名前や、お気に入りの名前を記入してください。">
+                    <i class="far fa-question-circle"></i>
+                  </button>
+                  <%= f.label :productName, "商品名", class:"form-control" %>
+                  <%= f.text_field :productName, class:"form-control", placeholder:"お品物の名前" %>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="メッセージ"data-content="ご自身のメモとして、投稿されるお品物の説明をお書きください。また、ご興味のある方に知って欲しいと思うことなどをご自由にお書きください。">
+                    <i class="far fa-question-circle"></i>
+                  </button>
+                  <%= f.label :message, "メッセージ", class:"form-control" %>
+                  <%= f.text_area :message, placeholder:"お品物についてのメモ書き、ご興味のある方へ伝えたいことなどお書きください。", class:"form-control" %>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="ご入手の場所、シチュエーション"data-content="ご掲載のお品物について、どこで出逢われたのかなどをお書きください。">
+                    <i class="far fa-question-circle"></i>
+                  </button>
+                  <%= f.label :howToGet, "お品物と出会った場所など", class:"form-control" %>
+                  <%= f.text_area :howToGet, class:"form-control", placeholder:"ご自由にお書きください" %>
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="お店の名前など"data-content="お品物をご購入されたお店の名前がお分かりでしたら、お書きください。お譲りいただいたものなどの場合、大切な人からなどでも大丈夫です。">
+                    <i class="far fa-question-circle"></i>
+                  </button>
+                  <%= f.label :shopName, "お店の名前", class:"form-control" %>
+                  <%= f.text_field :shopName, class:"form-control" %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit 'go', class: "btn btn-info" %>
+              </div>
+            <% end %>
 
+          </div>
+        </div>
+      </div>
+      <!--modal finish-->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-10 my-5 mx-auto">
+
+      <div class="row my-5 flex_box postProduct">
+        <%= render "end_user/end_users/indexPostProduct", end_user: @end_user %>
+      </div>
     </div>
   </div>
 </div>

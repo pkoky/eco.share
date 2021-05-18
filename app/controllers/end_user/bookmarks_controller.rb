@@ -3,6 +3,7 @@ class EndUser::BookmarksController < ApplicationController
   
   def bookmarks
     @bookmarks = Bookmark.where(end_user_id: current_end_user.id)
+    
   end
   
   def create

@@ -18,6 +18,41 @@
 @import 'font-awesome';
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.flex_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex_item {
+  margin:  10px;
+  border-radius: 11px 11px 0 0;
+}
+
+.productImage {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 200px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+// https://qiita.com/KazuyoshiGoto/items/4f88e87bb12ff38d1c4e line-clampについて
+
 .slider {
   max-width: 800px;
   margin: 0 auto 5px;
@@ -37,19 +72,138 @@
   cursor: pointer;
 }
 
-.img_wrap{
-  border: 1px solid #ddd;
-  width: 300px;
-  // height: 300px;
-  margin: 0 auto;
-  overflow: hidden;
-  cursor: pointer;
+// .img_wrap{
+//   border: 1px solid #ddd;
+//   margin: 0 auto;
+//   overflow: hidden;
+//   cursor: pointer;
+// }
+// .img_wrap img{
+//   width: 100%;
+//   transition-duration: 0.5s;
+// }
+// .img_wrap:hover img{
+//   transform: scale(1.2);
+//   transition-duration: 0.5s;
+// }
+
+
+
+.home_image {
+  height: 600px;
+  background-image: url(oneworld.jpeg);
+  background-size: cover;
+  background-position: center;
 }
-.img_wrap img{
+
+.home_image_content {
   width: 100%;
-  transition-duration: 0.5s;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding-top: 230px;
 }
-.img_wrap:hover img{
-  transform: scale(1.2);
-  transition-duration: 0.5s;
+
+.home_image_text {
+  width: 100%;
+  padding-left: 20px;
+  color: #fff;
 }
+
+.home_image_text_name {
+  width: 100%;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.home_postProducts {
+  width: 70%;
+}
+
+.end_user_image {
+  height: 600px;
+  background-image: url(leaf.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.postProducts_image {
+  height: 600px;
+  background-image: url(windturbine.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.end_user_index_image {
+  height: 600px;
+  background-image: url(sea.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.end_user_index_image_content {
+
+}
+
+
+
+.btn--blue_dark {
+  background: #1c2f49;
+  min-width: 300px;
+  min-height: 60px;
+  color: #fff;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
+}
+
+.btn {
+  border-radius: 10px;
+  font: 600 1rem/1.2 Montserrat,sans-serif;
+}
+// https://beginners-high.com/css-hover-change/ ボタンhover説明
+
+.btn--blue_dark:hover {
+  background-color: #00aca9;
+  color: #fff;
+}
+
+.btn--transparence {
+  color: #00aca9;
+  border: 1px solid #00aca9;
+  min-width: 300px;
+  min-height: 60px;
+  font: 600 1rem/1.2 Montserrat,sans-serif;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
+}
+
+.btn--transparence:hover {
+  background: #1c2f49;
+  color: #fff;
+}
+
+.home_text {
+  width: 70%;
+}
+
+.title--bold {
+  font-weight: 700;
+}
+
+.title {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  // white-space: pre-line;
+}
+
+
+
+
+
+
+
+// https://www.sejuku.net/blog/56401 flexbox説明

@@ -6,11 +6,9 @@ class EndUser::PostProductsController < ApplicationController
   def create
     @postProduct = PostProduct.new(post_product_params)
     @postProduct.end_user_id = current_end_user.id
-    if @postProduct.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @postProduct.save
+    @end_user = current_end_user
+
   end
 
   def index

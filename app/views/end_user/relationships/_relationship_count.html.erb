@@ -1,2 +1,10 @@
-<p>フォロー数: <%= end_user.follower.count %></p>
-<p>フォロワー数: <%= end_user.followed.count %></p>
+<div class="row pt-5">
+  <div class="col text-center">
+    <%= end_user.follower.count %>
+    <p>フォロー中</p>
+  </div>
+  <div class="col text-center">
+    <%= end_user.followed.count %>
+    <p>フォロワー</p>
+  </div>
+</div>

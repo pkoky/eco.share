@@ -6,6 +6,7 @@ class EndUser::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
+    @postProductNew = PostProduct.new
   end
 
   def edit
@@ -21,7 +22,7 @@ class EndUser::EndUsersController < ApplicationController
     end
   end
 
-  
+
 
   private
   def end_user_params

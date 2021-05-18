@@ -1,7 +1,7 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-md-8 col-lg-8">
-      <%= form_with model:@postProduct, url:post_products_path, local:true do |f| %>
+      <%= form_with model:@postProduct, url:post_products_path, remote:true do |f| %>
       <table class="table table-bordered table-condensed mt-3">
         <tr>
           <td><%= f.attachment_field :post_images_images, multiple: true, placeholder: "post_images" %></td>
