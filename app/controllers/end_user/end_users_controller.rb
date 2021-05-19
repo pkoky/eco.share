@@ -6,6 +6,8 @@ class EndUser::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
+    @endUserPostProduct = EndUser.find(params[:id])
+    @endUserPostProduct = @endUserPostProduct.post_products.all.page(params[:page]).per(9)
     @postProductNew = PostProduct.new
   end
 

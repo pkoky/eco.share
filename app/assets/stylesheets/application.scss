@@ -141,8 +141,17 @@
   background-position: center;
 }
 
-.end_user_index_image_content {
+.logo_image {
+  height: 100px;
+  background-image: url(logosample.jpeg);
+  background-size: 100%;
+  background-position: center;
+}
 
+.footer {
+  height: 30px;
+  width: 100%;
+  background: #1c2f49;
 }
 
 
@@ -200,8 +209,9 @@
   // white-space: pre-line;
 }
 
-
-
+.pagination {
+  text-align: center;
+}
 
 
 

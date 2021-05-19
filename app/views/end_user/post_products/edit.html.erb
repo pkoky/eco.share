@@ -1,32 +1,28 @@
 <div class="container my-5">
   <div class="row">
-    <div class="col-md-8 col-lg-8">
+    <div class="col-md-3 col-lg-3"></div>
+    <div class="col-md-6 col-lg-6">
       <%= form_with model:@postProduct ,url:post_product_path, method: :patch, local:true do |f| %>
-      <table class="table table-bordered table-condensed mt-3">
+        <p><% @postProduct.post_images.each do |image|%>
+          <%= attachment_image_tag image, :image, :fill, 50, 50, class: "default_image" %>
+        <% end %></p>
+        <p><%= f.attachment_field :post_images_images, multiple: true, placeholder: "post_images formTag" %></p>
+        <p><%= f.text_field :productName, class: "formTag formTagField" %></p>
+        <p><%= f.text_area :message, class: "formTag formTagMessage" %></p>
+        <p><%= f.text_field :howToGet, placeholder:"自分の紹介文を書いてみましょう", class: "formTag formTagField" %></p>
+        <p><%= f.text_field :shopName, placeholder:"自分の紹介文を書いてみましょう", class: "formTag formTagField" %></p>
+        <p><%= f.submit 'go', class: "btn btn--transparence" %></p>
+        <p><% end %></p>
 
-        <tr>
-          <td>
-            <% @postProduct.post_images.each do |image|%>
-              <%= attachment_image_tag image, :image, :fill, 50, 50, class: "default_image" %>
-            <% end %>
-          </td>
-          <td><%= f.attachment_field :post_images_images, multiple: true, placeholder: "post_images" %></td>
-        </tr>
-        <tr>
-          <td><%= f.text_field :productName %></td>
-        </tr>
-        <tr>
-          <td><%= f.text_area :message %></td>
-        </tr>
-        <tr>
-          <td><%= f.text_field :howToGet, placeholder:"自分の紹介文を書いてみましょう" %></td>
-        </tr>
-        <tr>
-          <td><%= f.text_field :shopName, placeholder:"自分の紹介文を書いてみましょう" %></td>
-        </tr>
-        <%= f.submit 'go', class: "btn btn-success rounded-pill px4 ml-3" %>
-      </table>
-      <% end %>
+
     </div>
+    <div class="col-md-3 col-lg-3"></div>
   </div>
 </div>
+
+
+
+
+
+
+

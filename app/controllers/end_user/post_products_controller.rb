@@ -12,7 +12,7 @@ class EndUser::PostProductsController < ApplicationController
   end
 
   def index
-    @postProducts = PostProduct.all
+    @postProducts = PostProduct.all.page(params[:page]).per(9)
   end
 
   def show

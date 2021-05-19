@@ -13,9 +13,11 @@
   <header>
     <div class="container-fluid my-3 ">
       <div class="row">
-        <div class="col-md-8 col-ml-6 mx-auto">
+        <div class="col-md-3 col-ml-4 mx-auto">
           <%= link_to root_path do %>
-            <h1 class="text-center">ecoshare</h1>
+           <div class="logo_image">
+              <div class="logo-image-content"></div>
+          </div>
           <% end %>
         </div>
       </div>
@@ -29,16 +31,14 @@
               <ul class="navbar-nav ml-auto justify-content-center">
                 <% if end_user_signed_in? %>
                   <li class="nav-item">
-                    <%= link_to "current_end_user", end_user_path(current_end_user), class:"nav-link" %>
+                    <%= link_to "current_end_user", end_user_path(current_end_user),data: {"turbolinks" => false}, class:"nav-link" %>
                   </li>
+                  <!--data: {"turbolinks" => false} 遷移先ページのみturbolinksを切る-->
                   <li class="nav-item">
                     <%= link_to "end_users", end_users_path, class:"nav-link" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "post_product", post_products_path, class:"nav-link" %>
-                  </li>
-                  <li class="nav-item">
-                    <%= link_to "post_product_new", new_post_product_path, class:"nav-link" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "logout", destroy_end_user_session_path, method: :delete, class:"nav-link" %>
@@ -61,6 +61,8 @@
   <body>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <%= yield %>
+    <footer class="footer">
+    </footer>
   </body>
 </html>
 
