@@ -118,28 +118,28 @@
 
 .end_user_image {
   height: 600px;
-  background-image: url(leaf.jpeg);
+  background-image: url("leaf.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .postProducts_image {
   height: 600px;
-  background-image: url(windturbine.jpeg);
+  background-image: url("windturbine.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .end_user_index_image {
   height: 600px;
-  background-image: url(sea.jpeg);
+  background-image: url("sea.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .logo_image {
   height: 100px;
-  background-image: url(logosample.jpeg);
+  background-image: url("logosample.jpeg");
   background-size: 100%;
   background-position: center;
 }
@@ -148,13 +148,13 @@
   border-radius: 10px 10px 0 0;
   width: 100%;
   height: 200px;
-  background-image: url(noimage.jpg);
+  background-image: url("noimage.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .postProductShowNoImage {
-  background-image: url(noimage.jpg);
+  background-image: url("noimage.jpg");
   background-size: cover;
   background-position: center;
 }
