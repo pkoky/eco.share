@@ -1,3 +1,4 @@
+<!--show.html.erb-->
 <div class="container-fluid my-5">
   <div class="row">
     <div class="col">
@@ -40,13 +41,17 @@
       <div class="row">
         <div class="col-lg-4 mx-auto">
           <div class="slider shadow mt-3">
-            <% @postProduct.post_images.each do |post| %>
-              <%= attachment_image_tag post, :image, :fill, 1500, 1000, format: "jpeg" %>
-             <% end %>
+            <% if @postProduct.post_images.present? %>
+              <% @postProduct.post_images.each do |post| %>
+                <%= attachment_image_tag post, :image, :fill, 1200, 1200,format: "jpeg", fallback:"noimage.jpg" %>
+              <% end %>
+            <% else %>
+              <div class="postProductShowNoImage" style="height:400px"></div>
+            <% end %>
           </div>
           <div class="slider-1 my-3">
             <% @postProduct.post_images.each do |post| %>
-              <%= attachment_image_tag post, :image, :fill, 1200, 800, format: "jpeg" %>
+              <%= attachment_image_tag post, :image, :fill, 1200, 1200, format: "jpeg" %>
              <% end %>
           </div>
         </div>
@@ -55,8 +60,10 @@
       <div class="row my-5">
         <div class="col-md-4 col-lg-4"></div>
         <div class="col-md-2 col-lg-2 ml-5">
-          <% if @postProduct.end_user.id == current_end_user.id %>
-            <%= render "end_user/post_products/btn", postProduct: @postProduct %>
+          <% if end_user_signed_in? %>
+            <% if @postProduct.end_user.id == current_end_user.id %>
+              <%= render "end_user/post_products/btn", postProduct: @postProduct %>
+            <% end %>
           <% end %>
         </div>
       </div>

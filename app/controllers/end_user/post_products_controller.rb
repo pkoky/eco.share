@@ -8,7 +8,7 @@ class EndUser::PostProductsController < ApplicationController
     @postProduct.end_user_id = current_end_user.id
     @postProduct.save
     @end_user = current_end_user
-
+    @endUserPostProduct = current_end_user.post_products.all.page(params[:page]).per(9)
   end
 
   def index

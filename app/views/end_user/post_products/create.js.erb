@@ -1,4 +1,5 @@
+<!--create.js.erb-->
 $("textarea").val("");
 $("input").val("");
 $('#exampleModalLong').modal('hide');
-$('.postProduct').html("<%= escape_javascript(render "end_user/end_users/indexPostProduct", end_user: @end_user ) %>")
+$('.postProduct').html("<%= escape_javascript(render "end_user/end_users/indexPostProduct", post_products: @endUserPostProduct ) %>")
