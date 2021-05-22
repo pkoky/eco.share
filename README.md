@@ -44,6 +44,3 @@ ecoを推進できるものをシェアし、使う人によって本当にい�
 - JS ライブラリ：jQuery
 - IDE：Cloud9
 
-## デザイン参考
-
-[ヘッダー・一覧](https://youmatter.world/en/)
