@@ -2,20 +2,27 @@
 <div class="container-fluid">
   <div class="row home_image">
     <div class="home_image_content">
-      <p class="home_image_text">
-        texttext<br/>
-        texttexttexttexttexttext、<br/>
-        texttexttexttexttexttexttexttexttext。<br/>
-      </p>
+      <div class="home_image_text">
+        <p>
+          Living better is not just having more,</br>
+          but being happier</br>
+        </p>
+        <p>
+          より良い暮らしをするってことは、</br>
+          お金や物をたくさん持つことじゃなくて、</br>
+          より幸せであることだ
+        </p>
+      </div>
+
       <p class="home_image_text_name">
-        text・texttexttext
+        ホセ・ムヒカ
       </p>
     </div>
   </div>
   <div class="row">
-    <div class="col col-md-10 col-lg-10 mx-auto flex_box">
+    <div class="col col-md-10 col-lg-10 mx-auto card-area">
       <% @postProducts.each do |postProduct| %>
-        <div class="card flex_item shadow ml-5 my-5" style="width: 17rem;">
+        <div class="card flex_item shadow ml-5 my-5">
           <% if postProduct.post_images.first(1).present? %>
             <% postProduct.post_images.first(1).each do |image| %>
               <%= attachment_image_tag image, :image, class:"card-img-top productImage postProductBookmark";%>
@@ -23,8 +30,8 @@
           <% else %>
             <div class="card-img-top productImage"></div>
           <% end %>
-          <div class="bookmarks btn rounded-pill shadow" style="background:#fff; color:#00aca9;">
-            <i class="fas fa-book-reader" style="color:#00aca9;"></i><%= postProduct.bookmarks.count %>
+          <div class="bookmarks btn rounded-pill shadow">
+            <i class="fas fa-book-reader"></i><%= postProduct.bookmarks.count %>
           </div>
           <div class="card-body">
             <!--何もなしリンク　stretched-linkでカード全体をリンクにしている-->
@@ -45,18 +52,21 @@
         </div>
       <% end %>
     </div>
-    <%= link_to "read all", post_products_path, class: "btn btn--blue_dark mx-auto my-5 pt-3"%>
+
+  </div>
+  <div class="row">
+    <%= link_to "read all", post_products_path, class: "btn btn--blue_dark mx-auto my-5 pt-3 topReadAllBtn"%>
   </div>
 
   <div class="row mx-auto home_text my-5">
     <div class="col-md-5 col-lg-5">
-      <div class="title--bold title">
+      <div class="title--bold top-title">
         ecoに関するものを。<br/>
         お気に入りを記録し<br/>
         他の方のお気に入りを参考にしてください。
       </div>
     </div>
-    <div class="col-md-7 col-lg-7">
+    <div class="col-md-7 col-lg-7 top-text">
       <p>
       現在の経済システムの性質では、<br/>
       より広告にお金をかけたもの・良いイメージを作り上げたものがより多くの人の目に触れます。<br/>
@@ -68,12 +78,12 @@
       </p>
     </div>
   </div>
-  <div class="row py-5" style="background:#00aca9;">
-    <div class="col col-md-1 col-lg-1 ml-auto" style="color:#fff;">
-      <h2>
+  <div class="row py-5 top-number-users-area">
+    <div class="col col-md-2 col-lg-2 ml-auto text-right">
+      <h2 class="top-number-users">
         <% @endUserCount.each do |count| %><%= count.id %><% end %>人
       </h2>
     </div>
-    <div class="col col-md-5 col-lg-4 mr-auto" style="color:#fff;"><h2>The number of users</h2></div>
+    <div class="col col-md-6 col-lg-5 mr-auto"><h2 class="top-number-users-text">The number of users</h2></div>
   </div>
 </div>
