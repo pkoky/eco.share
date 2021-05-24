@@ -4,9 +4,9 @@
       <div class="postProducts_image_content"></div>
   </div>
   <div class="row my-5">
-    <div class="col-lg-10 mx-auto flex_box">
+    <div class="col col-md-10 col-lg-10 mx-auto card-area">
     <% @postProducts.order(updated_at: :desc).each do |postProduct| %>
-      <div class="card flex_item shadow ml-5">
+      <div class="card flex_item shadow ml-5 my-5">
         <% if postProduct.post_images.first(1).present? %>
           <% postProduct.post_images.first(1).each do |image| %>
             <%= attachment_image_tag image, :image, class:"card-img-top productImage postProductBookmark";%>

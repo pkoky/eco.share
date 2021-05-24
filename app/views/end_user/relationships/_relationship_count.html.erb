@@ -1,10 +1,15 @@
 <div class="row">
   <div class="col text-center">
-    <%= end_user.follower.count %>
-    <p>フォロー中</p>
+    <div class="relationship-count">
+      <%= end_user.follower.count %>
+    </div>
+
+    <p class="relationship-count-p">フォロー中</p>
   </div>
   <div class="col text-center">
-    <%= end_user.followed.count %>
-    <p>フォロワー</p>
+    <div class="relationship-count">
+      <%= end_user.followed.count %>
+    </div>
+    <p class="relationship-count-p">フォロワー</p>
   </div>
 </div>

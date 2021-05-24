@@ -3,11 +3,11 @@
   <% unless postProduct.end_user_id == current_end_user.id %>
     <% if postProduct.bookmarked_by?(current_end_user) %>
       <%= link_to post_product_bookmarks_path(postProduct), method: :delete, remote: true do %>
-        <i class="far fa-bookmark" style="color:#7c5441;"></i>
+        <i class="far fa-bookmark"></i>
       <% end %>
     <% else %>
       <%= link_to post_product_bookmarks_path(postProduct), method: :post, remote: true do %>
-        <i class="fas fa-bookmark" style="color:#7c5441;"></i>
+        <i class="fas fa-bookmark"></i>
       <% end %>
     <% end %>
   <% end %>

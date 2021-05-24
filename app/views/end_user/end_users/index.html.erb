@@ -1,13 +1,13 @@
 <!--index.html.erb-->
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-lg-8 mt-5">
+    <div class="col-md-12 col-lg-8 mt-5">
       <% @end_users.each do |end_user| %>
       <table class="table table-borderless table-hover">
         <tbody class="text-center">
           <tr id="follow_<%= end_user.id %>">
             <td><%= attachment_image_tag end_user, :profile_pic, :fill, 80, 80, class:"rounded-circle" %></td>
-            <td>
+            <td class="end-user-index-nickname">
               <%= link_to end_user_path(end_user.id) do %>
                 <%= end_user.nickname %>
               <% end %>
