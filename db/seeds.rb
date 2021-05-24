@@ -26,3 +26,9 @@ EndUser.create!(
   email: "5@5",
   password: "000000"
   )
+
+
+  # Admin.create!(
+  # email: "admin@admin",
+  # password: "000000"
+  # )

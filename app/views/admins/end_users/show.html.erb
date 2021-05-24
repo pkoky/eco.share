@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>profile_pic</td>
+            <td>
+              <%= attachment_image_tag @endUser, :profile_pic,:fill, 80, 80, class:"rounded-circle" %>
+            </td>
+          </tr>
+          <tr>
+            <th>nickname</th>
+            <td><%= @endUser.nickname%></td>
+          </tr>
+          <tr>
+            <th>id</th>
+            <td><%= @endUser.id%></td>
+          </tr>
+          <tr>
+            <td>introduction</td>
+            <td><%= simple_format @endUser.self_introduction %></td>
+          </tr>
+          <tr>
+            <td>投稿数</td>
+            <td><%= @endUser.post_products.count %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

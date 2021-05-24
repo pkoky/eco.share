@@ -1,4 +1,6 @@
 class EndUser::PostProductsController < ApplicationController
+  skip_before_action :authenticate_end_user!, only: [:index, :show]
+
   def new
     @postProduct = PostProduct.new
   end

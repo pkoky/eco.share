@@ -22,11 +22,6 @@
           <h5>
             <%= @postProduct.productName %>
           </h5>
-          <div id="bookmark_<%= @postProduct.id %>">
-            <div class="bookmark">
-              <%= render "end_user/bookmarks/bookmarks", postProduct: @postProduct %>
-            </div>
-          </div>
           <div class="mt-3">
             <%= simple_format @postProduct.message %>
           </div>
