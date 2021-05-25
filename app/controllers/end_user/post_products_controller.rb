@@ -30,6 +30,13 @@ class EndUser::PostProductsController < ApplicationController
     @postProduct.update(post_product_params)
     redirect_to post_product_path(@postProduct.id)
   end
+  
+  def destroy
+    # post_product_path(:id) method: :delete
+    @postProduct = PostProduct.find(params[:id])
+    @postProduct.destroy
+    redirect_to post_products_path
+  end 
 
 
 
