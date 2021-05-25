@@ -1,26 +1,32 @@
 <!--bookmarks.html.erb-->
-<div class="container my-5">
-  <div class="row">
-    <div class="col-lg-10 mx-auto flex_box postProduct ">
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col col-md-10 col-lg-10 mx-auto card-area">
       <% @bookmarks.each do |bookmark| %>
-        <div class="card flex_item shadow" style="width: 13rem;">
-          <%= link_to post_product_path(bookmark.post_product.id) do %>
+        <div class="card shadow ml-5">
+          <% if bookmark.post_product.post_images.first(1).present? %>
             <% bookmark.post_product.post_images.first(1).each do |image| %>
               <%= attachment_image_tag image, :image, class: "card-img-top productImage" %>
             <% end %>
+          <% else %>
+            <div class="card-img-top productImage"></div>
           <% end %>
+          <div class="bookmarks btn rounded-pill shadow">
+            <i class="fas fa-book-reader"></i><%= bookmark.post_product.bookmarks.count %>
+          </div>
           <div class="card-body">
-            <h5 class="card-title">
+            <%= link_to post_product_path(bookmark.post_product.id),data: {"turbolinks" => false}, class: "stretched-link no-underline" do %>
+            <% end %>
+            <h5 class="card-title ml-4 mt-4 pt-2">
               <%= bookmark.post_product.productName %>
             </h5>
             <!--simple_format 改行が反映される-->
-            <div class="line-clamp">
-              <p class="card-text"><%= simple_format bookmark.post_product.message %></p>
+            <div class="line-clamp ml-4 card-text">
+              <%= simple_format bookmark.post_product.message %>
             </div>
-            <div id="bookmark_<%= bookmark.post_product.id %>">
-              <div class="bookmark">
-                <%= render "end_user/bookmarks/bookmarks", postProduct: bookmark.post_product %>
-              </div>
+            <span class="readMore">read more</span>
+            <div class="updatedAt">
+              <%= (Date.today - bookmark.post_product.updated_at.to_date).to_i.to_s %>日前
             </div>
           </div>
         </div>
