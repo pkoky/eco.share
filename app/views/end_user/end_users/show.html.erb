@@ -58,10 +58,10 @@
       </button>
       <% end %>
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-fluid" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">新規投稿</h5>
+              <h5 class="modal-title modal-responsible-text" id="exampleModalLongTitle">新規投稿</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -70,46 +70,45 @@
             <%= form_with model:@postProductNew, url:post_products_path do |f| %>
               <div class="modal-body">
                 <!--https://www.tohoho-web.com/bootstrap/popovers.html ポップオーバーについて-->
-
                 <div class="form-group">
-                  <%= f.label :post_images_images, "写真" %>
+                  <%= f.label :post_images_images, "写真", class: "modal-responsible-text" %>
                   <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="写真"data-content="写真をいくつか投稿する場合は、shiftを使い、1度で選択してください。">
-                  <i class="far fa-question-circle"></i>
+                  <i class="far fa-question-circle modal-responsible-text"></i>
                   </button>
                   <%= f.attachment_field :post_images_images, multiple: true, class:"form-control-file" %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :productName, "商品名" %>
+                  <%= f.label :productName, "商品名", class: "modal-responsible-text"%>
                    <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="商品名"data-content="掲載されるお品物の名前を記入してください。もしわからない場合はご自身がわかりやすい名前や、お気に入りの名前を記入してください。">
-                    <i class="far fa-question-circle"></i>
+                    <i class="far fa-question-circle modal-responsible-text"></i>
                   </button>
-                  <%= f.text_field :productName, class:"form-control", placeholder:"お品物の名前" %>
+                  <%= f.text_field :productName, class:"form-control modal-responsible-text", placeholder:"お品物の名前" %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :message, "メッセージ" %>
+                  <%= f.label :message, "メッセージ", class: "modal-responsible-text" %>
                   <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="メッセージ"data-content="ご自身のメモとして、投稿される物の説明をお書きください。また、ご興味のある方に知って欲しいと思うことなどをご自由にお書きください。">
-                    <i class="far fa-question-circle"></i>
+                    <i class="far fa-question-circle modal-responsible-text"></i>
                   </button>
                   <%= f.text_area :message, placeholder:"投稿内容についてのメモ書き、ご興味のある方へ伝えたいことなどお書きください。", class:"form-control" %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :howToGet, "投稿するものと出会った場所など" %>
+                  <%= f.label :howToGet, "投稿するものと出会った場所など", class: "modal-responsible-text" %>
                   <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="ご入手の場所、シチュエーション"data-content="ご投稿されるものと、どこで出逢われたのかなどをお書きください。">
-                    <i class="far fa-question-circle"></i>
+                    <i class="far fa-question-circle modal-responsible-text"></i>
                   </button>
-                  <%= f.text_area :howToGet, class:"form-control", placeholder:"ご自由にお書きください" %>
+                  <%= f.text_area :howToGet, class:"form-control modal-responsible-text", placeholder:"ご自由にお書きください" %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :shopName, "お店の名前" %>
+                  <%= f.label :shopName, "お店の名前", class: "modal-responsible-text"  %>
                   <button type="button" class="btn rounded-circle p-0" data-toggle="popover"title="お店の名前など"data-content="ご投稿されるものをご購入されたお店の名前がお分かりでしたら、お書きください。お譲りいただいたものなどの場合、大切な人からなどでも大丈夫です。">
-                    <i class="far fa-question-circle"></i>
+                    <i class="far fa-question-circle modal-responsible-text"></i>
                   </button>
-                  <%= f.text_field :shopName, class:"form-control" %>
+                  <%= f.text_area :shopName, class:"form-control modal-responsible-text" %>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <%= f.submit 'go', class: "btn btn-info" %>
+                <button type="button" class="btn btn-secondary modal-responsible-text" data-dismiss="modal">Close</button>
+                <%= f.submit 'go', class: "btn btn-info modal-responsible-text" %>
               </div>
             <% end %>
 

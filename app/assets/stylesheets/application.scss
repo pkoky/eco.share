@@ -24,6 +24,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color:#00aca9;
+}
+
 
 .flex_box {
   display: flex;
@@ -304,6 +308,19 @@
   line-height: 30px;
 }
 
+.table-profile-pic {
+  width: 15%;
+}
+.table-nickname {
+  width: 50%;
+  font-size: 20px;
+}
+
+
+
+
+
+
 
 
 
@@ -311,20 +328,20 @@
 @media screen and (min-width:300px) and (max-width:1000px) {
 
   .logo_image {
-    height: 150px;
+    height: 180px;
     width: 100%;
   }
 
   .home_image_content {
-  padding-top: 150px;
-}
+    padding-top: 150px;
+  }
 
 
   .home_image_text{
     font-size: 30px;
   }
   .nav-link {
-    font-size: 30px;
+    font-size: 40px;
   }
   .card {
     width: 90%;
@@ -435,4 +452,21 @@
     font-size: 40px;
   }
 
+  .relationship-btn {
+    font-size: 35px;
+    padding-bottom: 15px;
+  }
+
+  .table-nickname {
+    font-size: 40px;
+  }
+
+  .modal-dialog-fluid {
+    max-width: inherit;
+  width: 98%;
+  }
+
+  .modal-responsible-text {
+    font-size: 30px;
+  }
 }
