@@ -6,7 +6,7 @@
       <table class="table table-borderless table-hover">
         <tbody>
           <tr id="follow_<%= end_user.id %>">
-            <td class="table-profile-pic"><%= attachment_image_tag end_user, :profile_pic, class:"rounded-circle profile-pic" %></td>
+            <td class="table-profile-pic"><%= attachment_image_tag end_user, :profile_pic, fallback:"noimage.jpg", class:"rounded-circle profile-pic" %></td>
             <td class="end-user-index-nickname table-nickname">
               <%= link_to end_user_path(end_user.id) do %>
                 <%= end_user.nickname %>
