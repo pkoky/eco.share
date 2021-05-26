@@ -11,12 +11,17 @@ Rails.application.routes.draw do
     get 'homes/about'
     get 'mybookmarks' => 'bookmarks#bookmarks', as: 'bookmarks'
     resources :end_users, only: [:index, :show, :edit, :update]
+    
     resources :post_products do
       resource :bookmarks, only: [:create, :destroy]
     end
+    get 'follower/:id' => 'relationships#follower', as: 'follower'
+    get 'followed/:id' => 'relationships#followed', as: 'followed'
     post 'follow/:id' => 'relationships#follow', as: 'follow'
     post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   end
+  
+  
   namespace :admins do
     resources :end_users, only: [:index, :show]
     resources :post_products, only: [:index, :show]
