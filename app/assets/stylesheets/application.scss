@@ -332,17 +332,28 @@ a {
     width: 100%;
   }
 
+  .navbar-toggler-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .nav-link {
+    font-size: 50px;
+  }
+
   .home_image_content {
     padding-top: 150px;
   }
 
 
   .home_image_text{
-    font-size: 30px;
-  }
-  .nav-link {
     font-size: 40px;
   }
+
+  .home_image_text_name {
+    font-size: 40px;
+  }
+
   .card {
     width: 90%;
     height: 1200px;
