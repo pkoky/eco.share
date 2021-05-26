@@ -7,7 +7,7 @@
           <tr>
             <th>
               <%= attachment_image_tag @end_user, :profile_pic, fallback:"noimage.jpg",class:"rounded-circle profile-pic" %>
-              <p class="mt-3 end-users-show-nickname"><%= @end_user.nickname %></p>
+              <p class="mt-3 end-users-show-nickname text-color"><%= @end_user.nickname %></p>
             </th>
             <th>
               <%= link_to bookmarks_path do %>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="row">
-    <div class="mx-auto mt-5 pt-5">
+    <div class="mx-auto mt-5 pt-5 text-color">
       <% if @end_user == current_end_user %>
       <!--modal-->
       <button type="button" class="btn btn--transparence edit-btn" data-toggle="modal" data-target="#exampleModalLong">
@@ -122,7 +122,11 @@
     <div class="col-lg-10 my-5 mx-auto">
 
       <div class="row my-5 postProduct">
-        <%= render "end_user/end_users/indexPostProduct", post_products: @endUserPostProduct %>
+        <% if @endUserPostProduct.present? %>
+          <%= render "end_user/end_users/indexPostProduct", post_products: @endUserPostProduct %>
+        <% else %>
+          <h3 class="mx-auto"><span class="end-users-show-new-none">新規投稿</span>はありません</h3>
+        <% end %>
       </div>
     </div>
   </div>
