@@ -22,6 +22,7 @@ class EndUser < ApplicationRecord
   # through: :経由するモデル名を指定する
   # source: :関連先モデル名を指定する
 
+  validates :nickname, uniqueness: true
 
 
 
