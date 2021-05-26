@@ -14,7 +14,7 @@
   <header>
     <div class="container-fluid">
       <div class="row">
-        <div class="col col-md-6 col-ml-4 mx-auto my-3">
+        <div class="col col-md-6 col-lg-4 mx-auto my-3">
           <%= link_to root_path do %>
             <div class="logo_image mx-auto">
             </div>
@@ -31,14 +31,14 @@
               <ul class="navbar-nav mx-auto justify-content-center">
                 <% if end_user_signed_in? %>
                   <li class="nav-item">
-                    <%= link_to "current_end_user", end_user_path(current_end_user),data: {"turbolinks" => false}, class:"nav-link" %>
+                    <%= link_to "マイページ", end_user_path(current_end_user),data: {"turbolinks" => false}, class:"nav-link" %>
                   </li>
                   <!--data: {"turbolinks" => false} 遷移先ページのみturbolinksを切る-->
                   <li class="nav-item">
-                    <%= link_to "end_users", end_users_path, class:"nav-link" %>
+                    <%= link_to "ユーザー", end_users_path, class:"nav-link" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "post_product", post_products_path, class:"nav-link" %>
+                    <%= link_to "投稿一覧", post_products_path, class:"nav-link" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "logout", destroy_end_user_session_path, method: :delete, class:"nav-link" %>

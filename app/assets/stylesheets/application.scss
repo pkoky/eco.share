@@ -22,6 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Helvetica Neue Ultra Light";
 }
 
 a {
@@ -59,7 +60,7 @@ img {
 
 
 .card-body {
-  padding: 0;
+  padding: 0 10px 0 0;
 }
 
 .line-clamp {
@@ -134,14 +135,6 @@ img {
   background-size: cover;
   background-position: center;
 }
-
-.end_user_index_image {
-  height: 600px;
-  background-image: image-url("sea.jpeg");
-  background-size: cover;
-  background-position: center;
-}
-
 
 .logo_image {
   height: 100px;
@@ -287,6 +280,10 @@ img {
   color: #7c5441;
 }
 
+.bookmarks-bookmark-text {
+  color: #00aca9;
+}
+
 .card-area {
   display: flex;
   flex-wrap: wrap;
@@ -311,17 +308,28 @@ img {
 .table-profile-pic {
   width: 20%;
 }
+
 .table-nickname {
   width: 45%;
   font-size: 20px;
 }
 
+.nav-item {
+  margin: 0 20px;
+}
 
 
 
 
+@media screen and (min-width:1500px) {
+
+  .logo_image {
+    height: 180px;
+    width: 100%;
+  }
 
 
+}
 
 
 
@@ -500,8 +508,5 @@ img {
     height: 140px;
   }
 
-  .end_user_index_image {
-    display: none;
-  }
 
 }
