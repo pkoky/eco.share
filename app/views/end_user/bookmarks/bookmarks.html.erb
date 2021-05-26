@@ -2,6 +2,7 @@
 <div class="container-fluid">
   <div class="row my-5">
     <div class="col-lg-10 mx-auto card-area">
+      <% if @bookmarks.present? %>
       <% @bookmarks.each do |bookmark| %>
         <div class="card shadow ml-5">
           <% if bookmark.post_product.post_images.first(1).present? %>
@@ -30,6 +31,11 @@
             </div>
           </div>
         </div>
+      <% end %>
+      <% else %>
+      <div class="text-center mx-auto">
+        <h1><i class="fas fa-book-open"></i><span class="bookmarks-bookmark-text">ブックマーク</span>はありません</h1>
+      </div>
       <% end %>
     </div>
   </div>
