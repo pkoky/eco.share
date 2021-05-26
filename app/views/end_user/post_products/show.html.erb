@@ -15,7 +15,7 @@
       <div class="row mt-5 mb-3">
         <div class="col-md-10 col-lg-5 mx-auto">
           <div class="post-products-show-namebookmark">
-            <h5 class="post-products-show-title">
+            <h5 class="post-products-show-title text-color">
             <%= @postProduct.productName %>
           </h5>
           <div id="bookmark_<%= @postProduct.id %>">
@@ -25,16 +25,16 @@
           </div>
           </div>
 
-          <div class="mt-3 post-products-show-text">
+          <div class="mt-3 post-products-show-text text-color">
             <%= simple_format @postProduct.message %>
           </div>
           <% if @postProduct.howToGet.present?%>
-            <div class="mt-3 post-products-show-title">入手場所</div>
-            <div class="post-products-show-text"><%= simple_format @postProduct.howToGet %></div>
+            <div class="mt-3 post-products-show-title text-color">入手場所</div>
+            <div class="post-products-show-text text-color"><%= simple_format @postProduct.howToGet %></div>
           <% end %>
           <% if @postProduct.shopName.present? %>
-            <div class="post-products-show-title">お店の名前</div>
-            <div class="post-products-show-text"><%= simple_format@postProduct.shopName %></div>
+            <div class="post-products-show-title text-color">お店の名前</div>
+            <div class="post-products-show-text text-color"><%= simple_format@postProduct.shopName %></div>
           <% end %>
         </div>
       </div>

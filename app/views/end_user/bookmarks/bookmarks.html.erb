@@ -4,7 +4,7 @@
     <div class="col-lg-10 mx-auto card-area">
       <% if @bookmarks.present? %>
       <% @bookmarks.each do |bookmark| %>
-        <div class="card shadow ml-5">
+        <div class="card shadow ml-5 text-color">
           <% if bookmark.post_product.post_images.first(1).present? %>
             <% bookmark.post_product.post_images.first(1).each do |image| %>
               <%= attachment_image_tag image, :image, class: "card-img-top productImage" %>
@@ -33,7 +33,7 @@
         </div>
       <% end %>
       <% else %>
-      <div class="text-center mx-auto">
+      <div class="text-center mx-auto text-color">
         <h1><i class="fas fa-book-open"></i><span class="bookmarks-bookmark-text">ブックマーク</span>はありません</h1>
       </div>
       <% end %>

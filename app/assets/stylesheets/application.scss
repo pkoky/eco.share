@@ -40,6 +40,10 @@ img {
   padding-bottom: 300px;
 }
 
+.text-color {
+  color: #333;
+}
+
 
 .profile-pic {
   width: 100px;
@@ -307,7 +311,8 @@ img {
   color: #00aca9;
 }
 
-.bookmarks-bookmark-text {
+.bookmarks-bookmark-text,
+.end-users-show-new-none{
   color: #00aca9;
 }
 
@@ -556,6 +561,19 @@ img {
   .follower-followerd-container,
   .bookmarks-container{
     min-height: 1500px;
+  }
+
+  .btn-bookmark-post,
+  .btn-bookmark-delete {
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    padding-top: 27px;
+    text-align: center;
+  }
+
+  .bookmark-text {
+    font-size: 40px;
   }
 
 
