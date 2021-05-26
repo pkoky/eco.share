@@ -1,15 +1,18 @@
 <div class="row">
   <div class="col text-center">
-    <div class="relationship-count">
-      <%= end_user.follower.count %>
-    </div>
-
-    <p class="relationship-count-p">フォロー中</p>
+    <%= link_to followed_path(end_user.id) do %>
+      <div class="relationship-count">
+        <%= end_user.follower.count %>
+      </div>
+      <p class="relationship-count-p">フォロー中</p>
+     <% end %>
   </div>
   <div class="col text-center">
-    <div class="relationship-count">
-      <%= end_user.followed.count %>
-    </div>
-    <p class="relationship-count-p">フォロワー</p>
+    <%= link_to follower_path(end_user.id) do %>
+      <div class="relationship-count">
+        <%= end_user.followed.count %>
+      </div>
+      <p class="relationship-count-p">フォロワー</p>
+    <% end %>
   </div>
 </div>

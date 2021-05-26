@@ -210,6 +210,7 @@ img {
 
 .home_text {
   width: 70%;
+  margin: 100px 0 150px 0;
 }
 
 .title--bold {
@@ -317,6 +318,12 @@ img {
 .nav-item {
   margin: 0 20px;
 }
+
+.follower-followerd-container {
+  min-height: 500px;
+}
+
+
 
 
 
@@ -506,6 +513,10 @@ img {
   .profile-pic {
     width: 140px;
     height: 140px;
+  }
+
+  .follower-followerd-container {
+    min-height: 1500px;
   }
 
 

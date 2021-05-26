@@ -1,0 +1,25 @@
+<div class="container-fluid follower-followerd-container">
+  <div class="row">
+    <div class="col-md-12 col-lg-8 mt-5 mx-auto">
+      <% @follower.each do |follower| %>
+      <table class="table table-borderless table-hover">
+        <tbody>
+          <tr id="follow_<%= follower.id %>">
+            <td class="table-profile-pic"><%= attachment_image_tag follower, :profile_pic, fallback:"noimage.jpg", class:"rounded-circle profile-pic" %></td>
+            <td class="end-user-index-nickname table-nickname">
+              <%= link_to end_user_path(follower.id) do %>
+                <%= follower.nickname %>
+              <% end %>
+            </td>
+            <td class="text-right table-relationship">
+              <p class="relationship">
+                <%= render "end_user/relationships/relationship", end_user: follower %>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
