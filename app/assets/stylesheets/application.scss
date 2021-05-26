@@ -28,6 +28,16 @@ a {
   color:#00aca9;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+}
+
 
 .flex_box {
   display: flex;
@@ -429,7 +439,7 @@ a {
   .relationship-count,
   .end-user-bookmark-p,
   .relationship-count-p {
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 20px;
   }
 
@@ -442,7 +452,8 @@ a {
   }
 
   .end-users-show-introduction {
-    font-size: 30px;
+    font-size: 40px;
+    margin-top: 20px;
   }
 
 
@@ -491,5 +502,9 @@ a {
 
   .popover-body {
     font-size: 40px;
+  }
+
+  img {
+    width: 150px;
   }
 }
