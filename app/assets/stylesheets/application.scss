@@ -180,16 +180,18 @@ img {
   transition: all  0.8s ease;
 }
 
+.btn--blue_dark:hover {
+  background-color: #00aca9;
+  color: #fff;
+}
+
 .btn {
   border-radius: 10px;
   font: 600 1rem/1.2 Montserrat,sans-serif;
 }
 // https://beginners-high.com/css-hover-change/ ボタンhover説明
 
-.btn--blue_dark:hover {
-  background-color: #00aca9;
-  color: #fff;
-}
+
 
 .btn--transparence {
   color: #00aca9;
@@ -205,6 +207,34 @@ img {
 
 .btn--transparence:hover {
   background: #1c2f49;
+  color: #fff;
+}
+
+.btn-bookmark-post {
+ color: #00aca9;
+  border: 1px solid #00aca9;
+  font: 600 1rem/1.2 Montserrat,sans-serif;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
+}
+.btn-bookmark:hover {
+  background: #1c2f49;
+  color: #fff;
+}
+
+.btn-bookmark-delete {
+  background: #1c2f49;
+  color: #fff;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
+}
+
+.btn-bookmark-delete:hover {
+  background-color: #00aca9;
   color: #fff;
 }
 
@@ -277,10 +307,6 @@ img {
   color: #00aca9;
 }
 
-.fa-bookmark {
-  color: #7c5441;
-}
-
 .bookmarks-bookmark-text {
   color: #00aca9;
 }
@@ -319,10 +345,22 @@ img {
   margin: 0 20px;
 }
 
-.follower-followerd-container {
+.follower-followerd-container,
+.bookmarks-container{
   min-height: 500px;
 }
 
+.post-products-show-title {
+  font-weight: 700;
+}
+
+.post-products-show-namebookmark {
+  display: flex;
+}
+
+.bookmark {
+  margin-left: 20px;
+}
 
 
 
@@ -515,7 +553,8 @@ img {
     height: 140px;
   }
 
-  .follower-followerd-container {
+  .follower-followerd-container,
+  .bookmarks-container{
     min-height: 1500px;
   }
 

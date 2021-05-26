@@ -3,11 +3,15 @@
   <% unless postProduct.end_user_id == current_end_user.id %>
     <% if postProduct.bookmarked_by?(current_end_user) %>
       <%= link_to post_product_bookmarks_path(postProduct), method: :delete, remote: true do %>
-        <i class="far fa-bookmark"></i>ブックマークを外す
+      <div class="btn btn-bookmark-delete rounded-circle">
+        <i class="far fa-bookmark"></i>
+      </div>外す
       <% end %>
     <% else %>
       <%= link_to post_product_bookmarks_path(postProduct), method: :post, remote: true do %>
+      <div class="btn btn-bookmark-post rounded-circle">
         <i class="fas fa-bookmark"></i>
+      </div>
       <% end %>
     <% end %>
   <% end %>
