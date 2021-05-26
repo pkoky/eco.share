@@ -171,6 +171,21 @@ img {
   bottom: 0;
 }
 
+.btn-sign {
+  background: #1c2f49;
+
+  color: #fff;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
+}
+
+.btn-sign:hover {
+  background-color: #00aca9;
+  color: #fff;
+}
+
 
 
 .btn--blue_dark {
@@ -351,7 +366,8 @@ img {
 }
 
 .follower-followerd-container,
-.bookmarks-container{
+.bookmarks-container,
+.post-index-row {
   min-height: 500px;
 }
 
@@ -366,6 +382,10 @@ img {
 .bookmark {
   margin-left: 20px;
 }
+
+
+
+
 
 
 
@@ -559,7 +579,8 @@ img {
   }
 
   .follower-followerd-container,
-  .bookmarks-container{
+  .bookmarks-container,
+  .post-index-row {
     min-height: 1500px;
   }
 
