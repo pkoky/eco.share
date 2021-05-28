@@ -24,17 +24,15 @@ ecoを推進できるものをシェアし、使う人によって本当にい�
 自分のお気に入りの商品を記録する場所として。
 他の人のお気に入りを参考に、新たな素晴らしいものを発見する情報収集の場所として。
 
-## 設計書
-
-\*[テーブル定義書](https://www.icloud.com/numbers/0CNGbQz_MmKQWbYXkCrL7rEbQ)
-
-\*[アプリケーション詳細設計書](https://www.icloud.com/numbers/0bJ3kgFQOZH1-UoDYiwblyHyA)
-
-\*[画面設計](https://www.icloud.com/keynote/0lJToOOaiaIMqJcEO9smtTVRA)
-
 ## 機能一覧
 
-[要素一覧](https://docs.google.com/spreadsheets/d/1PnE-g1G895zYof7Iajy2MCNrkDgEoPMkKtqmaZVemWY/edit?usp=sharing)
+[機能一覧](https://docs.google.com/spreadsheets/d/1PnE-g1G895zYof7Iajy2MCNrkDgEoPMkKtqmaZVemWY/edit?usp=sharing)
+
+
+## 使用素材
+[Unsplash](https://unsplash.com/)
+
+
 
 ## 開発環境
 
