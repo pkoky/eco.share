@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require_tree .
 
-
+/* global $ */
 $(document).on('turbolinks:load', function() {
   window.addEventListener("load", function () {
     $('[data-toggle="popover"]').popover();

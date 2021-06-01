@@ -14,6 +14,7 @@
           <% end %>
           <div class="bookmarks btn rounded-pill shadow">
             <i class="fas fa-book-reader"></i><%= bookmark.post_product.bookmarks.count %>
+            <%= render "end_user/post_products/ai", postProduct: bookmark.post_product %>
           </div>
           <div class="card-body">
             <%= link_to post_product_path(bookmark.post_product.id),data: {"turbolinks" => false}, class: "stretched-link no-underline" do %>

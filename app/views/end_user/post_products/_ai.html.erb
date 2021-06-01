@@ -1,0 +1,11 @@
+<% if postProduct.score.present? %>
+  <% if postProduct.score > 0.6 %>
+    <i class="far fa-grin-hearts"></i>
+  <% elsif postProduct.score > 0.1 %>
+    <i class="far fa-smile-wink"></i>
+  <% elsif postProduct.score > -0.5 %>
+    <i class="far fa-angry"></i>
+  <% else %>
+    <i class="far fa-sad-tear"></i>
+  <% end %>
+<% end %>
