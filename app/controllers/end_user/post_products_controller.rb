@@ -8,6 +8,7 @@ class EndUser::PostProductsController < ApplicationController
   def create
     @postProduct = PostProduct.new(post_product_params)
     @postProduct.end_user_id = current_end_user.id
+    @postProduct.score = Language.get_data(post_product_params[:message])
     @postProduct.save
     @end_user = current_end_user
     @endUserPostProduct = current_end_user.post_products.all.page(params[:page]).per(9)
@@ -27,6 +28,7 @@ class EndUser::PostProductsController < ApplicationController
 
   def update
     @postProduct = PostProduct.find(params[:id])
+    @postProduct.score = Language.get_data(params[:post_product][:message])
     @postProduct.update(post_product_params)
     redirect_to post_product_path(@postProduct.id)
   end
@@ -46,3 +48,10 @@ class EndUser::PostProductsController < ApplicationController
   end
 
 end
+
+
+
+# score > 0.6 <i class="far fa-grin-hearts"></i>
+# score > 0.1 <i class="far fa-smile-wink"></i>
+# score > -0.5 <i class="far fa-angry"></i>
+# score > -1.0 <i class="far fa-sad-tear"></i>
