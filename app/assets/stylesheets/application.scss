@@ -35,34 +35,22 @@ a {
   margin-left: 20px;
 }
 
-.btn-sign {
-  background: #1c2f49;
-  color: #fff;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
-  transition: all  0.8s ease;
+.bookmarks {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    min-width: 120px;
+    min-height: 30;
+    top: 46%;
+    left: 28%;
+    background:#fff;
+    color:#00aca9;
 }
 
-.btn-sign:hover {
-  background-color: #00aca9;
-  color: #fff;
-}
 
-.btn--blue_dark {
-  background: #1c2f49;
-  min-width: 300px;
-  min-height: 60px;
-  color: #fff;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
-  transition: all  0.8s ease;
-}
-
-.btn--blue_dark:hover {
-  background-color: #00aca9;
-  color: #fff;
+.bookmarks-bookmark-text,
+.end-users-show-new-none{
+  color: #00aca9;
 }
 
 .btn {
@@ -71,22 +59,6 @@ a {
 }
 // https://beginners-high.com/css-hover-change/ ボタンhover説明
 
-.btn--transparence {
-  color: #00aca9;
-  border: 1px solid #00aca9;
-  min-width: 300px;
-  min-height: 60px;
-  font: 600 1rem/1.2 Montserrat,sans-serif;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
-  transition: all  0.8s ease;
-}
-
-.btn--transparence:hover {
-  background: #1c2f49;
-  color: #fff;
-}
 
 .btn-bookmark-post {
  color: #00aca9;
@@ -116,24 +88,63 @@ a {
   color: #fff;
 }
 
-.bookmarks {
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    min-width: 120px;
-    min-height: 30;
-    top: 46%;
-    left: 28%;
-    background:#fff;
-    color:#00aca9;
+
+.btn--blue_dark {
+  background: #1c2f49;
+  min-width: 300px;
+  min-height: 60px;
+  color: #fff;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
 }
 
+.btn--blue_dark:hover {
+  background-color: #00aca9;
+  color: #fff;
+}
 
-.bookmarks-bookmark-text,
-.end-users-show-new-none{
+.btn-sign {
+  background: #1c2f49;
+  color: #fff;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
+}
+
+.btn-sign:hover {
+  background-color: #00aca9;
+  color: #fff;
+}
+
+.btn--transparence {
   color: #00aca9;
+  border: 1px solid #00aca9;
+  min-width: 300px;
+  min-height: 60px;
+  font: 600 1rem/1.2 Montserrat,sans-serif;
+  webkit-transition: all 0.8s ease;
+  moz-transition: all 0.8s ease;
+  o-transition: all 0.8s ease;
+  transition: all  0.8s ease;
 }
 
+.btn--transparence:hover {
+  background: #1c2f49;
+  color: #fff;
+}
+
+
+
+.card {
+  height: 400px;
+  width: 17rem;¥
+  margin:  10px;
+  border-radius: 11px 11px 0 0;
+}
+// https://www.sejuku.net/blog/56401 flexbox説明
 
 .card-area {
   display: flex;
@@ -145,59 +156,29 @@ a {
 }
 
 
-.card {
-  height: 400px;
-  width: 17rem;
+.end_user_image {
+  height: 600px;
+  background-image: image-url("leaf.jpeg");
+  background-size: cover;
+  background-position: center;
 }
-// https://www.sejuku.net/blog/56401 flexbox説明
-
-
-
-
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.wrapper {
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 300px;
-}
-
-.text-color {
-  color: #333;
-}
-
-
-.profile-pic {
-  width: 100px;
-  height: 100px;
-}
-
-
-.flex_box {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin:  10px;
-  border-radius: 11px 11px 0 0;
-}
-
 
 .end-users-show-table {
   line-height: 30px;
 }
 
 
-.end_user_image {
-  height: 600px;
-  background-image: image-url("leaf.jpeg");
-  background-size: cover;
-  background-position: center;
+.fa-book-reader {
+  color: #00aca9;
+}
+
+.fa-book-open {
+  color: #00aca9;
+}
+
+.flex_box {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer {
@@ -208,18 +189,18 @@ img {
   bottom: 0;
 }
 
-.fa-book-reader {
-  color: #00aca9;
-}
-
-.fa-book-open {
-  color: #00aca9;
-}
-
 .follower-followerd-container,
 .bookmarks-container,
 .post-index-row {
   min-height: 500px;
+}
+
+
+.home_image {
+  height: 600px;
+  background-image: image-url("oneworld.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 .home_image_content {
@@ -246,18 +227,17 @@ img {
   width: 70%;
 }
 
-.home_image {
-  height: 600px;
-  background-image: image-url("oneworld.jpeg");
-  background-size: cover;
-  background-position: center;
-}
-
-
 .home_text {
   width: 70%;
   margin: 100px 0 150px 0;
 }
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 .line-clamp {
   display: -webkit-box;
@@ -328,6 +308,11 @@ img {
   display: flex;
 }
 
+.profile-pic {
+  width: 100px;
+  height: 100px;
+}
+
 .readMore {
   position: absolute;
   top: 90%;
@@ -351,6 +336,10 @@ img {
 
 .slider-1 {
   cursor: pointer;
+}
+
+.text-color {
+  color: #333;
 }
 
 .title--bold {
@@ -392,6 +381,13 @@ img {
 }
 
 
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 300px;
+}
+
+
 
 
 
@@ -409,7 +405,7 @@ img {
 
 
 @media screen and (min-width:300px) and (max-width:1000px) {
-  
+
   .btn-bookmark-post,
   .btn-bookmark-delete {
     width: 100px;
@@ -422,7 +418,7 @@ img {
   .bookmark-text {
     font-size: 40px;
   }
-  
+
   .bookmarks {
     top: 56%;
     left: 36%;
@@ -432,8 +428,8 @@ img {
     min-height: 100;
     font-size: 40px;
   }
-  
-  
+
+
   .card {
     width: 90%;
     height: 1200px;
@@ -452,8 +448,8 @@ img {
   .card-text {
     font-size: 35px;
   }
-  
-  
+
+
   .end-users-show-nickname {
     font-size: 45px;
   }
@@ -483,17 +479,17 @@ img {
   .end-user-index-nickname {
     font-size: 30px;
   }
-  
+
   .fa-bookmark {
     font-size: 40px;
   }
-  
+
   .follower-followerd-container,
   .bookmarks-container,
   .post-index-row {
     min-height: 1500px;
   }
-  
+
   .home_image_content {
     padding-top: 150px;
   }
@@ -506,12 +502,12 @@ img {
   .home_image_text_name {
     font-size: 40px;
   }
-  
+
   .logo_image {
     height: 180px;
     width: 100%;
   }
-  
+
   .modal-dialog-fluid {
     max-width: inherit;
   width: 98%;
@@ -530,16 +526,16 @@ img {
   .nav-link {
     font-size: 50px;
   }
-  
-  
+
+
   .productImage {
     width: 100%;
     height: 700px;
     background-image: image-url("noimage.jpg");
     border-radius: 50px 50px 0 0;
   }
-  
-  
+
+
   .post-products-show-nickname {
     font-size: 45px;
   }
@@ -552,8 +548,8 @@ img {
   .post-products-show-text {
     font-size: 30px;
   }
-  
-  
+
+
   .popover-header  {
     font-size: 40px;
   }
@@ -566,18 +562,18 @@ img {
     width: 140px;
     height: 140px;
   }
-  
+
   .readMore {
     position: absolute;
     font-size: 35px;
   }
-  
+
   .relationship-btn {
     font-size: 35px;
     padding-bottom: 15px;
   }
-  
-  
+
+
   .topReadAllBtn{
     min-width: 50%;
     min-height: 100px;
@@ -599,11 +595,11 @@ img {
   .top-number-users-text {
     font-size: 45px;
   }
-  
+
   .table-nickname {
     font-size: 40px;
   }
-  
+
   .updatedAt {
     position: absolute;
     font-size: 35px;
