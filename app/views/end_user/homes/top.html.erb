@@ -2,19 +2,19 @@
 <div class="container-fluid">
   <div class="row home_image">
     <div class="home_image_content">
-      <div class="home_image_text">
-        <p>
+      <div class="textHomeImage">
+        <p class="textColorWhite">
           Living better is not just having more,</br>
           but being happier</br>
         </p>
-        <p>
+        <p class="textColorWhite">
           より良い暮らしをするってことは、</br>
           お金や物をたくさん持つことじゃなくて、</br>
           より幸せであることだ
         </p>
       </div>
 
-      <p class="home_image_text_name">
+      <p class="textHomeImageName textColorWhite">
         ホセ・ムヒカ
       </p>
     </div>
@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-lg-10 mx-auto card-area">
       <% @postProducts.each do |postProduct| %>
-        <div class="card flex_item shadow ml-5 my-5 text-color">
+        <div class="card flex_item shadow ml-5 my-5 textColorBase">
           <% if postProduct.post_images.first(1).present? %>
             <% postProduct.post_images.first(1).each do |image| %>
               <%= attachment_image_tag image, :image, class:"card-img-top productImage postProductBookmark";%>
@@ -60,13 +60,13 @@
 
   <div class="row mx-auto home_text">
     <div class="col-5 col-md-12 col-lg-5">
-      <div class="title--bold top-title text-color">
+      <div class="title--bold top-title textColorBase">
         ecoに関するものを。<br/>
         お気に入りを記録し<br/>
         他の方のお気に入りを参考にしてください。
       </div>
     </div>
-    <div class="col-7 col-md-12 col-lg-7 top-text text-color">
+    <div class="col-7 col-md-12 col-lg-7 top-text textColorBase">
       <p>
       　現在の経済システムの性質では、
       より広告にお金をかけたもの・良いイメージを作り上げたものがより多くの人の目に触れます。<br/>
