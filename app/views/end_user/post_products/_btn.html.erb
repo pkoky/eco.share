@@ -14,7 +14,7 @@
         </div>
 
         <%= form_with model:postProduct ,url:post_product_path, method: :patch, local:true do |f| %>
-          <div class="modal-body text-color">
+          <div class="modal-body textColorBase">
             <!--https://www.tohoho-web.com/bootstrap/popovers.html ポップオーバーについて-->
             <div>
               <% postProduct.post_images.each do |image|%>

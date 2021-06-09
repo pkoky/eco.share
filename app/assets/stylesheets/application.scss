@@ -23,12 +23,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Helvetica Neue Ultra Light";
+  color: #333;
+}
+
+html {
+  font-size: 16px;
 }
 
 
-a {
-  color:#00aca9;
-}
+
+// a {
+//   color:#00aca9;
+// }
 
 
 .bookmark {
@@ -61,7 +67,7 @@ a {
 
 
 .btn-bookmark-post {
- color: #00aca9;
+  color: #00aca9;
   border: 1px solid #00aca9;
   font: 600 1rem/1.2 Montserrat,sans-serif;
   webkit-transition: all 0.8s ease;
@@ -211,17 +217,6 @@ a {
   padding-top: 230px;
 }
 
-.home_image_text {
-  width: 100%;
-  padding-left: 20px;
-  color: #fff;
-}
-
-.home_image_text_name {
-  width: 100%;
-  margin-top: 30px;
-  color: #fff;
-}
 
 .home_postProducts {
   width: 70%;
@@ -231,6 +226,8 @@ a {
   width: 70%;
   margin: 100px 0 150px 0;
 }
+
+
 
 
 img {
@@ -260,6 +257,7 @@ img {
 .nav-item {
   margin: 0 20px;
 }
+
 
 .no-underline{
   text-decoration:none !important;
@@ -354,6 +352,23 @@ img {
 
 .text-color {
   color: #333;
+}
+.textColorBase {
+  color: #333;
+}
+
+.textColorWhite {
+  color: #fff;
+}
+
+.textHomeImage {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.textHomeImageName {
+  width: 100%;
+  margin-top: 30px;
 }
 
 .top-title {
@@ -492,13 +507,7 @@ img {
     padding-top: 150px;
   }
 
-  .home_image_text{
-    font-size: 40px;
-  }
 
-  .home_image_text_name {
-    font-size: 40px;
-  }
 
 
   .logo_image {
@@ -519,7 +528,7 @@ img {
 
 
   .nav-link {
-    font-size: 50px;
+    font-size: 3rem;
   }
 
   .navbar-toggler-icon {
@@ -577,6 +586,14 @@ img {
     font-size: 40px;
   }
 
+  .textHomeImage {
+    font-size: 2.5rem;
+  }
+
+  .textHomeImageName {
+    font-size: 2.5rem;
+  }
+
   .top-number-users{
     font-size: 45px;
   }
@@ -606,5 +623,9 @@ img {
     font-size: 35px;
     top: 90%;
     left: 80%;
+  }
+
+  .fontSize2rem {
+    font-size: 3.5rem;
   }
 }
