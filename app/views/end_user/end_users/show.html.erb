@@ -35,7 +35,7 @@
       <div class="row">
         <div class="mx-auto my-5">
           <% if @end_user.id == current_end_user.id %>
-            <%= link_to "プロフィールを編集", edit_end_user_path, class: "btn btn--blue_dark pt-3 edit-btn" %>
+            <%= link_to "プロフィールを編集", edit_end_user_path, class: "btn btnBlueDark pt-3 edit-btn" %>
           <% end %>
         </div>
       </div>
@@ -53,7 +53,7 @@
     <div class="mx-auto mt-5 pt-5 text-color">
       <% if @end_user == current_end_user %>
       <!--modal-->
-      <button type="button" class="btn btn--transparence edit-btn" data-toggle="modal" data-target="#exampleModalLong">
+      <button type="button" class="btn btnTransparence edit-btn" data-toggle="modal" data-target="#exampleModalLong">
         新規投稿
       </button>
       <% end %>

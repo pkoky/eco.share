@@ -94,19 +94,16 @@ html {
   color: #fff;
 }
 
-
-.btn--blue_dark {
+.btnBlueDark {
   background: #1c2f49;
   min-width: 300px;
   min-height: 60px;
   color: #fff;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
-  transition: all  0.8s ease;
+  // ease-out 開始時は早く変化し、終了時は緩やかに変化する。
+  transition: 0.8s ease-out;
 }
 
-.btn--blue_dark:hover {
+.btnBlueDark:hover {
   background-color: #00aca9;
   color: #fff;
 }
@@ -114,30 +111,24 @@ html {
 .btn-sign {
   background: #1c2f49;
   color: #fff;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
-  transition: all  0.8s ease;
+  transition: 0.8s ease-out;
 }
 
 .btn-sign:hover {
   background-color: #00aca9;
   color: #fff;
 }
-
-.btn--transparence {
+// btn--transparence
+.btnTransparence {
   color: #00aca9;
   border: 1px solid #00aca9;
   min-width: 300px;
   min-height: 60px;
   font: 600 1rem/1.2 Montserrat,sans-serif;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
-  transition: all  0.8s ease;
+  transition: 0.8s;
 }
 
-.btn--transparence:hover {
+.btnTransparence:hover {
   background: #1c2f49;
   color: #fff;
 }
