@@ -65,16 +65,17 @@ html {
 }
 // https://beginners-high.com/css-hover-change/ ボタンhover説明
 
+.btnBigSize {
+  min-width: 300px;
+  min-height: 60px;
+}
 
 .btn-bookmark-post {
   color: #00aca9;
   border: 1px solid #00aca9;
-  font: 600 1rem/1.2 Montserrat,sans-serif;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
   transition: all  0.8s ease;
 }
+
 .btn-bookmark:hover {
   background: #1c2f49;
   color: #fff;
@@ -83,9 +84,6 @@ html {
 .btn-bookmark-delete {
   background: #1c2f49;
   color: #fff;
-  webkit-transition: all 0.8s ease;
-  moz-transition: all 0.8s ease;
-  o-transition: all 0.8s ease;
   transition: all  0.8s ease;
 }
 
@@ -96,8 +94,6 @@ html {
 
 .btnBlueDark {
   background: #1c2f49;
-  min-width: 300px;
-  min-height: 60px;
   color: #fff;
   // ease-out 開始時は早く変化し、終了時は緩やかに変化する。
   transition: 0.8s ease-out;
@@ -122,9 +118,6 @@ html {
 .btnTransparence {
   color: #00aca9;
   border: 1px solid #00aca9;
-  min-width: 300px;
-  min-height: 60px;
-  font: 600 1rem/1.2 Montserrat,sans-serif;
   transition: 0.8s;
 }
 
@@ -409,6 +402,26 @@ img {
 
 @media screen and (min-width:300px) and (max-width:1000px) {
 
+  .responsibleFont15 {
+    font-size: 1.5rem;
+  }
+
+  .responsibleFont2 {
+    font-size: 2rem;
+  }
+
+  .responsibleFont25 {
+    font-size: 2.5rem;
+  }
+
+  .responsibleFont3 {
+    font-size: 3rem;
+  }
+
+  .responsibleFont35 {
+    font-size: 3.5rem;
+  }
+
   .bookmarks {
     top: 56%;
     left: 36%;
@@ -416,11 +429,11 @@ img {
     color:#00aca9;
     min-width: 200px;
     min-height: 100;
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .bookmark-text {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .btn-bookmark-post,
@@ -446,11 +459,11 @@ img {
   }
 
   .card-text {
-    font-size: 35px;
+    font-size: 2rem;
   }
 
   .card-title{
-    font-size: 45px;
+    font-size: 3rem;
   }
 
 
@@ -462,29 +475,29 @@ img {
   }
 
   .end-users-show-nickname {
-    font-size: 45px;
+    font-size: 3rem;
   }
 
   .end-user-bookmark,
   .relationship-count,
   .end-user-bookmark-p,
   .relationship-count-p {
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-top: 20px;
   }
 
   .end-user-index-nickname {
-    font-size: 30px;
+    font-size: 2rem;
   }
 
   .end-users-show-introduction {
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-top: 20px;
   }
 
 
   .fa-bookmark {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .follower-followerd-container,
@@ -514,7 +527,7 @@ img {
 
   .modal-responsible-text,
   .edit-text {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
 
@@ -529,24 +542,24 @@ img {
 
 
   .popover-header  {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .popover-body {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   .post-products-show-nickname {
-    font-size: 45px;
+    font-size: 3rem;
   }
 
   .post-products-show-title {
-    font-size: 45px;
+    font-size: 3rem;
     margin-top: 50px;
   }
 
   .post-products-show-text {
-    font-size: 30px;
+    font-size: 2rem;
   }
 
   .productImage {
@@ -564,33 +577,25 @@ img {
 
   .readMore {
     position: absolute;
-    font-size: 35px;
+    font-size: 2rem;
   }
 
-  .relationship-btn {
-    font-size: 35px;
-    padding-bottom: 15px;
+  .btnRelationship {
+    font-size: 2rem;
+    padding-bottom: 1rem;
   }
 
 
   .table-nickname {
-    font-size: 40px;
-  }
-
-  .textHomeImage {
-    font-size: 2.5rem;
-  }
-
-  .textHomeImageName {
     font-size: 2.5rem;
   }
 
   .top-number-users{
-    font-size: 45px;
+    font-size: 3rem;
   }
 
   .top-number-users-text {
-    font-size: 45px;
+    font-size: 3rem;
   }
 
   .topReadAllBtn{
@@ -600,11 +605,9 @@ img {
   }
 
   .top-title {
-    font-size: 3.5rem;
     margin-top: 100px;
   }
   .top-text {
-    font-size: 2rem;
     margin: 100px 0;
   }
 
