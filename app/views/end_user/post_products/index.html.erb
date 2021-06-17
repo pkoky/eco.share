@@ -19,7 +19,7 @@
           <%= render "end_user/post_products/ai", postProduct: postProduct %>
         </div>
         <div class="card-body">
-          <%= link_to post_product_path(postProduct.id),data: {"turbolinks" => false}, class: "stretched-link no-underline" do %>
+          <%= link_to post_product_path(postProduct.id),data: {"turbolinks" => false}, class: "stretched-link noUnderline" do %>
           <% end %>
           <h5 class="card-title ml-4 mt-4 pt-2">
             <%= postProduct.productName %>
