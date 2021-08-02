@@ -124,7 +124,7 @@
   <div class="row">
     <div class="col-lg-10 my-5 mx-auto">
 
-      <div class="row my-5 postProduct">
+      <div class="row my-5 postProduct renderPostProduct">
         <% if @endUserPostProduct.present? %>
           <%= render "end_user/end_users/indexPostProduct", post_products: @endUserPostProduct %>
         <% else %>
